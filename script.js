@@ -3,7 +3,7 @@
 // ============================================
 
 // Configuration
-const API_BASE_URL = 'http://www.aasaitech.in'; // Replace with your EC2 server URL
+const API_BASE_URL = 'https://aasai-tech-api.onrender.com/aasaitech/email'; // Replace with your EC2 server URL
 // For local testing: const API_BASE_URL = 'http://localhost:3000';
 
 // Utility functions for email integration
