@@ -1,19 +1,74 @@
+# robots.txt for https://www.aasaitech.in/
+# This file controls how search engines crawl our website
+
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://www.aasaitech.in/sitemap.xml
+Crawl-delay: 1
 
 # Allow all major search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
-# Block crawling of specific files if needed
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Block AI training bots (optional - uncomment if you want to block them)
+# User-agent: GPTBot
+# Disallow: /
+
+# User-agent: CCBot
+# Disallow: /
+
+# User-agent: ChatGPT-User
+# Disallow: /
+
+# User-agent: Google-Extended
+# Disallow: /
+
+# Block crawling of specific files/directories if needed
 # Disallow: /admin/
 # Disallow: /private/
+# Disallow: /wp-admin/
+# Disallow: /wp-includes/
+# Disallow: /*.pdf$
+# Disallow: /temp/
+# Disallow: /backup/
+
+# Allow specific files in otherwise disallowed directories
+# Allow: /wp-admin/admin-ajax.php
+
+# Sitemap location
+Sitemap: https://www.aasaitech.in/sitemap.xml
+
+# Host (canonical domain)
+Host: https://www.aasaitech.in
