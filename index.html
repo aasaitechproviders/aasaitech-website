@@ -77,6 +77,56 @@
     gtag('config', 'G-WYLK8PWBP5');
   </script>
   
+  <!-- Enhanced Website Schema for Sitelinks -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aasai Tech",
+    "url": "https://www.aasaitech.in/",
+    "description": "Professional engineering internships and software development services in Tamil Nadu",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Aasai Tech Providers Private Limited"
+    },
+    "mainEntity": [
+      {
+        "@type": "Service",
+        "name": "Mobile App Development",
+        "url": "https://www.aasaitech.in/#services",
+        "description": "Professional iOS and Android app development services"
+      },
+      {
+        "@type": "Service", 
+        "name": "Web Development",
+        "url": "https://www.aasaitech.in/#services",
+        "description": "Custom websites and web application development"
+      },
+      {
+        "@type": "EducationEvent",
+        "name": "Engineering Internship Program",
+        "url": "https://www.aasaitech.in/#internship",
+        "description": "Hands-on internship program for engineering students"
+      },
+      {
+        "@type": "ContactPoint",
+        "name": "Contact Us",
+        "url": "https://www.aasaitech.in/#contact",
+        "telephone": "+91-8939134777",
+        "email": "info@aasaitech.in"
+      }
+    ],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.aasaitech.in/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <!-- Organization Schema -->
   <script type="application/ld+json">
   {
@@ -172,6 +222,115 @@
         }
       ]
     }
+  }
+  </script>
+
+  <!-- Individual Service Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Mobile App Development",
+    "description": "Professional mobile app development services for iOS and Android platforms with AI integration and cutting-edge technology",
+    "provider": {
+      "@type": "Organization",
+      "name": "Aasai Tech Providers Private Limited",
+      "url": "https://www.aasaitech.in/"
+    },
+    "areaServed": "Tamil Nadu, India",
+    "serviceType": "Mobile Application Development",
+    "url": "https://www.aasaitech.in/#services",
+    "offers": {
+      "@type": "Offer",
+      "availability": "InStock",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Development",
+    "description": "Custom website and web application development services including e-commerce platforms and business solutions",
+    "provider": {
+      "@type": "Organization",
+      "name": "Aasai Tech Providers Private Limited",
+      "url": "https://www.aasaitech.in/"
+    },
+    "areaServed": "Tamil Nadu, India",
+    "serviceType": "Web Development",
+    "url": "https://www.aasaitech.in/#services",
+    "offers": {
+      "@type": "Offer",
+      "availability": "InStock",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Technology Training",
+    "description": "Comprehensive technical training programs and engineering internships for students and professionals",
+    "provider": {
+      "@type": "Organization",
+      "name": "Aasai Tech Providers Private Limited",
+      "url": "https://www.aasaitech.in/"
+    },
+    "areaServed": "Tamil Nadu, India",
+    "serviceType": "Technology Training",
+    "url": "https://www.aasaitech.in/#internship",
+    "offers": {
+      "@type": "Offer",
+      "availability": "InStock",
+      "priceCurrency": "INR"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Aasai Tech provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aasai Tech provides mobile app development, web development, technology training, and engineering internship programs in Tamil Nadu. We specialize in iOS and Android app development, custom web applications, and comprehensive technical training."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I contact Aasai Tech?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can contact Aasai Tech at +91-8939134777 or email info@aasaitech.in. We are located in Devapandalam, Tamil Nadu. You can also reach us through our social media channels on Facebook, LinkedIn, Instagram, and YouTube."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the internship program?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our internship program includes hands-on web and mobile app development training, real project experience, industry mentorship, career placement assistance, and an industry-recognized certificate upon completion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide training for engineering students?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer specialized training programs for engineering students including mobile app development, full stack web development, DevOps, cloud computing, and AI/machine learning courses with hands-on project experience."
+        }
+      }
+    ]
   }
   </script>
 
@@ -285,35 +444,11 @@
   }
   </script>
 
-  <!-- Website Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Aasai Tech",
-    "url": "https://www.aasaitech.in/",
-    "description": "Professional engineering internships and software development services in Tamil Nadu",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Aasai Tech Providers Private Limited"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.aasaitech.in/search?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="styles.css">
-
-    
+  
     <style>
         :root {
             --primary: #2563eb;
