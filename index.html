@@ -1687,326 +1687,344 @@
     </footer>
 
     <script>
-        // Configuration
-        const API_BASE_URL = 'https://www.aasaitech.in';
+       // Configuration
+const API_BASE_URL = 'https://aasai-tech-api.onrender.com/aasaitech/email';
 
-        // Utility functions
-        function showLoadingState(button, originalText = 'Submit') {
-            button.disabled = true;
-            const loadingHTML = `
-                <span style="display: inline-flex; align-items: center; gap: 8px;">
-                    <svg style="animation: spin 1s linear infinite; width: 16px; height: 16px;" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.3"/>
-                        <path fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"/>
-                    </svg>
-                    Sending...
-                </span>
-            `;
-            button.innerHTML = loadingHTML;
+// Utility functions
+function showLoadingState(button, originalText = 'Submit') {
+    button.disabled = true;
+    const loadingHTML = `
+        <span style="display: inline-flex; align-items: center; gap: 8px;">
+            <svg style="animation: spin 1s linear infinite; width: 16px; height: 16px;" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.3"/>
+                <path fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"/>
+            </svg>
+            Sending...
+        </span>
+    `;
+    button.innerHTML = loadingHTML;
+}
+
+function resetButtonState(button, originalText) {
+    button.disabled = false;
+    button.innerHTML = originalText;
+}
+
+function showPopup(message, isSuccess = true) {
+    const popup = document.getElementById('popup');
+    if (popup) {
+        popup.textContent = message;
+        popup.className = `popup ${isSuccess ? 'success' : 'error'}`;
+        popup.classList.add('show');
+        
+        setTimeout(() => {
+            popup.classList.remove('show');
+        }, 5000);
+    }
+}
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validatePhone(phone) {
+    const phoneRegex = /^[+]?[\d\s\-\(\)]{10,}$/;
+    return phoneRegex.test(phone);
+}
+
+// API Functions
+async function submitCareerForm(formData) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/career`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        if (!response.ok) {
+            throw new Error(result.message || `Server error: ${response.status}`);
         }
+        
+        return result;
+    } catch (error) {
+        console.error('Career form submission error:', error);
+        throw error;
+    }
+}
 
-        function resetButtonState(button, originalText) {
-            button.disabled = false;
-            button.innerHTML = originalText;
+async function submitContactForm(formData) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/contact`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        if (!response.ok) {
+            throw new Error(result.message || `Server error: ${response.status}`);
         }
+        
+        return result;
+    } catch (error) {
+        console.error('Contact form submission error:', error);
+        throw error;
+    }
+}
 
-        function showPopup(message, isSuccess = true) {
-            const popup = document.getElementById('popup');
-            if (popup) {
-                popup.textContent = message;
-                popup.className = `popup ${isSuccess ? 'success' : 'error'}`;
-                popup.classList.add('show');
-                
-                setTimeout(() => {
-                    popup.classList.remove('show');
-                }, 5000);
+// DOM Content Loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const nav = document.getElementById('nav');
+    
+    // Mobile Navigation Toggle
+    if (mobileToggle && nav) {
+        mobileToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            if (mobileToggle.querySelector('i')) {
+                mobileToggle.querySelector('i').classList.toggle('fa-bars');
+                mobileToggle.querySelector('i').classList.toggle('fa-times');
+            }
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            if (mobileToggle.querySelector('i')) {
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnToggle = mobileToggle.contains(event.target);
+        
+        if (nav.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+            nav.classList.remove('active');
+            if (mobileToggle.querySelector('i')) {
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
             }
         }
+    });
 
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
+    // Career Form Submission - FIXED VERSION
+    const careerForm = document.getElementById('career-form');
+    const popup = document.getElementById('popup');
 
-        function validatePhone(phone) {
-            const phoneRegex = /^[+]?[\d\s\-\(\)]{10,}$/;
-            return phoneRegex.test(phone);
-        }
-
-        // API Functions
-        async function submitCareerForm(formData) {
-            try {
-                const response = await fetch(`${API_BASE_URL}/api/career`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                if (!response.ok) {
-                    throw new Error(result.message || 'Network error occurred');
-                }
-                
-                return result;
-            } catch (error) {
-                console.error('Career form submission error:', error);
-                throw error;
-            }
-        }
-
-        async function submitContactForm(formData) {
-            try {
-                const response = await fetch(`${API_BASE_URL}/api/contact`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                const result = await response.json();
-                if (!response.ok) {
-                    throw new Error(result.message || 'Network error occurred');
-                }
-                
-                return result;
-            } catch (error) {
-                console.error('Contact form submission error:', error);
-                throw error;
-            }
-        }
-
-        // DOM Content Loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileToggle = document.getElementById('mobile-toggle');
-            const nav = document.getElementById('nav');
+    if (careerForm && popup) {
+        careerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Mobile Navigation Toggle
-            if (mobileToggle && nav) {
-                mobileToggle.addEventListener('click', function() {
-                    nav.classList.toggle('active');
-                    if (mobileToggle.querySelector('i')) {
-                        mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                        mobileToggle.querySelector('i').classList.toggle('fa-times');
-                    }
-                });
-            }
-
-            // Close mobile menu when clicking a link
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.classList.remove('active');
-                    if (mobileToggle.querySelector('i')) {
-                        mobileToggle.querySelector('i').classList.add('fa-bars');
-                        mobileToggle.querySelector('i').classList.remove('fa-times');
-                    }
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInsideNav = nav.contains(event.target);
-                const isClickOnToggle = mobileToggle.contains(event.target);
-                
-                if (nav.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
-                    nav.classList.remove('active');
-                    if (mobileToggle.querySelector('i')) {
-                        mobileToggle.querySelector('i').classList.add('fa-bars');
-                        mobileToggle.querySelector('i').classList.remove('fa-times');
-                    }
-                }
-            });
-
-            // Career Form Submission
-            const careerForm = document.getElementById('career-form');
-            const popup = document.getElementById('popup');
-
-            if (careerForm && popup) {
-                careerForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    
-                    const submitBtn = careerForm.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    
-                    try {
-                        const formData = new FormData(careerForm);
-                        const data = {
-                            name: formData.get('name')?.trim(),
-                            email: formData.get('email')?.trim(),
-                            phone: formData.get('phone')?.trim(),
-                            position: formData.get('position'),
-                            message: formData.get('message')?.trim()
-                        };
-                        
-                        // Client-side validation
-                        const errors = [];
-                        
-                        if (!data.name || data.name.length < 2) {
-                            errors.push('Name must be at least 2 characters long');
-                        }
-                        
-                        if (!data.email || !validateEmail(data.email)) {
-                            errors.push('Please enter a valid email address');
-                        }
-                        
-                        if (!data.phone || !validatePhone(data.phone)) {
-                            errors.push('Please enter a valid phone number');
-                        }
-                        
-                        if (!data.position || data.position === '') {
-                            errors.push('Please select a position');
-                        }
-                        
-                        if (!data.message || data.message.length < 10) {
-                            errors.push('Cover letter must be at least 10 characters long');
-                        }
-                        
-                        if (errors.length > 0) {
-                            showPopup(`Please fix the following issues: ${errors.join(', ')}`, false);
-                            return;
-                        }
-                        
-                        showLoadingState(submitBtn, originalText);
-                        
-                        // Simulate form submission
-                        await new Promise(resolve => setTimeout(resolve, 2000));
-                        
-                        showPopup('Thank you for your application! We will review it and get back to you soon.', true);
-                        careerForm.reset();
-                        
-                    } catch (error) {
-                        console.error('Career form error:', error);
-                        showPopup('Sorry, there was an error submitting your application. Please try again or contact us directly.', false);
-                    } finally {
-                        resetButtonState(submitBtn, originalText);
-                    }
-                });
-            }
-
-            // Contact Form Submission
-            const contactForm = document.getElementById('contact-form');
-
-            if (contactForm && popup) {
-                contactForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    
-                    const submitBtn = contactForm.querySelector('button[type="submit"]');
-                    const originalText = submitBtn.innerHTML;
-                    
-                    try {
-                        const formData = new FormData(contactForm);
-                        const data = {
-                            name: formData.get('name')?.trim(),
-                            email: formData.get('email')?.trim(),
-                            subject: formData.get('subject')?.trim(),
-                            message: formData.get('message')?.trim()
-                        };
-                        
-                        // Client-side validation
-                        const errors = [];
-                        
-                        if (!data.name || data.name.length < 2) {
-                            errors.push('Name must be at least 2 characters long');
-                        }
-                        
-                        if (!data.email || !validateEmail(data.email)) {
-                            errors.push('Please enter a valid email address');
-                        }
-                        
-                        if (!data.subject || data.subject.length < 3) {
-                            errors.push('Subject must be at least 3 characters long');
-                        }
-                        
-                        if (!data.message || data.message.length < 10) {
-                            errors.push('Message must be at least 10 characters long');
-                        }
-                        
-                        if (errors.length > 0) {
-                            showPopup(`Please fix the following issues: ${errors.join(', ')}`, false);
-                            return;
-                        }
-                        
-                        showLoadingState(submitBtn, originalText);
-                        
-                        // Simulate form submission
-                        await new Promise(resolve => setTimeout(resolve, 2000));
-                        
-                        showPopup('Thank you for your message! We will get back to you soon.', true);
-                        contactForm.reset();
-                        
-                    } catch (error) {
-                        console.error('Contact form error:', error);
-                        showPopup('Sorry, there was an error sending your message. Please try again or contact us directly.', false);
-                    } finally {
-                        resetButtonState(submitBtn, originalText);
-                    }
-                });
-            }
-
-            // Smooth scrolling for navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Header scroll effect
-            function handleHeaderScroll() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.padding = '2px 0';
-                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-                } else {
-                    header.style.padding = '5px 0';
-                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-                }
-            }
+            const submitBtn = careerForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             
-            window.addEventListener('scroll', handleHeaderScroll);
-            handleHeaderScroll();
-
-            // Animations on scroll using Intersection Observer
-            if ('IntersectionObserver' in window) {
-                const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in');
-                
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -100px 0px'
+            try {
+                const formData = new FormData(careerForm);
+                const data = {
+                    name: formData.get('name')?.trim(),
+                    email: formData.get('email')?.trim(),
+                    phone: formData.get('phone')?.trim(),
+                    position: formData.get('position'),
+                    message: formData.get('message')?.trim()
                 };
                 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate-active');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
+                // Client-side validation
+                const errors = [];
                 
-                animateElements.forEach(element => {
-                    observer.observe(element);
-                });
-            } else {
-                const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in');
-                animateElements.forEach(element => {
-                    element.classList.add('animate-active');
+                if (!data.name || data.name.length < 2) {
+                    errors.push('Name must be at least 2 characters long');
+                }
+                
+                if (!data.email || !validateEmail(data.email)) {
+                    errors.push('Please enter a valid email address');
+                }
+                
+                if (!data.phone || !validatePhone(data.phone)) {
+                    errors.push('Please enter a valid phone number');
+                }
+                
+                if (!data.position || data.position === '') {
+                    errors.push('Please select a position');
+                }
+                
+                if (!data.message || data.message.length < 10) {
+                    errors.push('Cover letter must be at least 10 characters long');
+                }
+                
+                if (errors.length > 0) {
+                    showPopup(`Please fix the following issues: ${errors.join(', ')}`, false);
+                    return;
+                }
+                
+                showLoadingState(submitBtn, originalText);
+                
+                // ACTUAL API CALL - This was missing!
+                const result = await submitCareerForm(data);
+                
+                showPopup('Thank you for your application! We will review it and get back to you soon.', true);
+                careerForm.reset();
+                
+            } catch (error) {
+                console.error('Career form error:', error);
+                let errorMessage = 'Sorry, there was an error submitting your application. Please try again or contact us directly.';
+                
+                // More specific error handling
+                if (error.message.includes('Failed to fetch')) {
+                    errorMessage = 'Unable to connect to server. Please check your internet connection and try again.';
+                } else if (error.message.includes('Server error')) {
+                    errorMessage = 'Server is temporarily unavailable. Please try again in a few minutes.';
+                }
+                
+                showPopup(errorMessage, false);
+            } finally {
+                resetButtonState(submitBtn, originalText);
+            }
+        });
+    }
+
+    // Contact Form Submission - FIXED VERSION
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm && popup) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            try {
+                const formData = new FormData(contactForm);
+                const data = {
+                    name: formData.get('name')?.trim(),
+                    email: formData.get('email')?.trim(),
+                    subject: formData.get('subject')?.trim(),
+                    message: formData.get('message')?.trim()
+                };
+                
+                // Client-side validation
+                const errors = [];
+                
+                if (!data.name || data.name.length < 2) {
+                    errors.push('Name must be at least 2 characters long');
+                }
+                
+                if (!data.email || !validateEmail(data.email)) {
+                    errors.push('Please enter a valid email address');
+                }
+                
+                if (!data.subject || data.subject.length < 3) {
+                    errors.push('Subject must be at least 3 characters long');
+                }
+                
+                if (!data.message || data.message.length < 10) {
+                    errors.push('Message must be at least 10 characters long');
+                }
+                
+                if (errors.length > 0) {
+                    showPopup(`Please fix the following issues: ${errors.join(', ')}`, false);
+                    return;
+                }
+                
+                showLoadingState(submitBtn, originalText);
+                
+                // ACTUAL API CALL - This was missing!
+                const result = await submitContactForm(data);
+                
+                showPopup('Thank you for your message! We will get back to you soon.', true);
+                contactForm.reset();
+                
+            } catch (error) {
+                console.error('Contact form error:', error);
+                let errorMessage = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+                
+                // More specific error handling
+                if (error.message.includes('Failed to fetch')) {
+                    errorMessage = 'Unable to connect to server. Please check your internet connection and try again.';
+                } else if (error.message.includes('Server error')) {
+                    errorMessage = 'Server is temporarily unavailable. Please try again in a few minutes.';
+                }
+                
+                showPopup(errorMessage, false);
+            } finally {
+                resetButtonState(submitBtn, originalText);
+            }
+        });
+    }
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
                 });
             }
         });
+    });
+
+    // Header scroll effect
+    function handleHeaderScroll() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.padding = '2px 0';
+            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        } else {
+            header.style.padding = '5px 0';
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        }
+    }
+    
+    window.addEventListener('scroll', handleHeaderScroll);
+    handleHeaderScroll();
+
+    // Animations on scroll using Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    } else {
+        const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in');
+        animateElements.forEach(element => {
+            element.classList.add('animate-active');
+        });
+    }
+});
     </script>
 </body>
 </html>
