@@ -37,6 +37,7 @@
         --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         --ai-accent: #8b5cf6;
+        --nvidia-green: #76b900;
     }
 
     * {
@@ -279,6 +280,73 @@
         animation-delay: 0.6s;
     }
 
+    /* Certifications Badge Section */
+    .certifications-badges {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+        animation: fadeInUp 1s both;
+        animation-delay: 0.9s;
+    }
+
+    .cert-badge {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 15px 25px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cert-badge:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .cert-badge img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    .cert-badge-text {
+        text-align: left;
+    }
+
+    .cert-badge-title {
+        font-size: 0.75rem;
+        color: var(--text);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .cert-badge-org {
+        font-size: 1rem;
+        color: var(--dark);
+        font-weight: 700;
+    }
+
+    .nvidia-badge {
+        border-color: var(--nvidia-green);
+    }
+
+    .nvidia-badge .cert-badge-org {
+        color: var(--nvidia-green);
+    }
+
+    .dpiit-badge .cert-badge-org {
+        color: #ff6b35;
+    }
+
     /* Animations */
     @keyframes fadeInDown {
         from { opacity: 0; transform: translateY(-30px); }
@@ -327,6 +395,55 @@
         background: var(--accent);
         bottom: 0;
         left: 0;
+    }
+
+    .certifications-section {
+        margin-top: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        border-radius: 15px;
+        border: 2px solid rgba(139, 92, 246, 0.2);
+    }
+
+    .certifications-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .certifications-list {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cert-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .cert-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .cert-item i {
+        font-size: 1.5rem;
+        color: var(--ai-accent);
+    }
+
+    .cert-item span {
+        font-weight: 600;
+        color: var(--dark);
     }
 
     /* AI Products Section */
@@ -632,184 +749,6 @@
     .service-btn {
         margin-top: 25px;
         text-align: center;
-    }
-
-    /* Internship Section */
-    .internship-section {
-        padding: 100px 0;
-        background: var(--ai-gradient);
-        position: relative;
-        overflow: hidden;
-        color: white;
-    }
-
-    .internship-header {
-        text-align: center;
-        margin-bottom: 80px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .internship-badge {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .internship-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 25px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .internship-subtitle {
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 600px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    .internship-content {
-        position: relative;
-        z-index: 2;
-    }
-
-    .internship-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        margin-bottom: 80px;
-    }
-
-    .internship-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 25px;
-        padding: 40px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .internship-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .card-icon {
-        width: 80px;
-        height: 80px;
-        background: var(--gradient-3);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 25px auto;
-        font-size: 2rem;
-        color: white;
-        box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
-    }
-
-    .card-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .feature-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .feature-list li {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 15px;
-        color: var(--text);
-        font-weight: 500;
-        line-height: 1.5;
-    }
-
-    .feature-list li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 18px;
-        height: 18px;
-        background: var(--gradient-3);
-        border-radius: 50%;
-    }
-
-    .feature-list li::after {
-        content: '✓';
-        position: absolute;
-        left: 5px;
-        top: 4px;
-        color: white;
-        font-size: 0.8rem;
-        font-weight: bold;
-    }
-
-    .cta-section {
-        text-align: center;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border-radius: 30px;
-        padding: 60px 40px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .cta-title {
-        font-size: 2.2rem;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 20px;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .cta-text {
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 40px;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-    }
-
-    .btn-primary-internship {
-        display: inline-block;
-        padding: 18px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.4s ease;
-        background: white;
-        color: var(--primary);
-        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-primary-internship:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
     }
 
     /* Careers Section */
@@ -1129,7 +1068,7 @@
     @media (max-width: 1024px) {
         h1 { font-size: 3rem; }
         h2 { font-size: 2.2rem; }
-        .services-grid, .ai-products-grid, .clients-grid, .internship-grid {
+        .services-grid, .ai-products-grid, .clients-grid {
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
     }
@@ -1146,7 +1085,6 @@
             align-items: center;
         }
         .ai-title { font-size: 2.5rem; }
-        .internship-title { font-size: 2.8rem; }
     }
 
     @media (max-width: 768px) {
@@ -1188,12 +1126,15 @@
             font-size: 1.1rem;
         }
         
-        .services-grid, .ai-products-grid, .clients-grid, .internship-grid { 
+        .services-grid, .ai-products-grid, .clients-grid { 
             grid-template-columns: 1fr; 
         }
         .careers-form, .contact-form { padding: 25px; }
         .ai-title { font-size: 2rem; }
-        .internship-title { font-size: 2.2rem; }
+        .certifications-badges {
+            flex-direction: column;
+            gap: 15px;
+        }
     }
 
     @media (max-width: 576px) {
@@ -1201,7 +1142,6 @@
         h1 { font-size: 1.8rem; }
         h2 { font-size: 1.6rem; }
         .ai-title { font-size: 1.8rem; }
-        .internship-title { font-size: 1.8rem; }
         .btn { padding: 12px 20px; font-size: 0.9rem; }
     }
 
@@ -1255,12 +1195,28 @@
     <section id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Fueling the Future of Technology</h1>
-                <p>Aasai Tech Providers Private Limited specializes in AI-powered educational solutions, software development and technical training, helping businesses and individuals thrive in the digital age.</p>
+                <h1>Powering Education with Artificial Intelligence</h1>
+                <p>Aasai Tech Providers Private Limited - A DPIIT-recognized startup and NVIDIA Inception member, specializing in AI-powered educational solutions, RAG systems, and cutting-edge technology services.</p>
                 <div class="hero-btns">
-                    <a href="#ai-products" class="btn">AI Solutions</a>
-                    <a href="#services" class="btn">Our Services</a>
+                    <a href="#ai-products" class="btn">Explore AI Solutions</a>
+                    <a href="https://ai.aasaitech.in" class="btn btn-ai" target="_blank">Try Live Demo</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="certifications-badges">
+                    <div class="cert-badge dpiit-badge">
+                        <i class="fas fa-award" style="font-size: 50px; color: #ff6b35;"></i>
+                        <div class="cert-badge-text">
+                            <div class="cert-badge-title">Recognized by</div>
+                            <div class="cert-badge-org">DPIIT</div>
+                        </div>
+                    </div>
+                    <div class="cert-badge nvidia-badge">
+                        <i class="fas fa-microchip" style="font-size: 50px; color: var(--nvidia-green);"></i>
+                        <div class="cert-badge-text">
+                            <div class="cert-badge-title">Member of</div>
+                            <div class="cert-badge-org">NVIDIA Inception</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1275,11 +1231,26 @@
                     <img src="./images/aboutus.jpeg" alt="Aasai Tech Team">
                 </div>
                 <div class="about-text animate-fade-up">
-                    <h3>We Build Tomorrow's Technology Today</h3>
-                    <p>Aasai Tech Providers Private Limited is a leading software development and technical training company dedicated to delivering innovative AI-powered educational solutions and empowering the next generation of tech professionals.</p>
-                    <p>Our team of experts combines technical excellence with industry knowledge to provide cutting-edge services that help our clients succeed in today's competitive digital landscape.</p>
-                    <p>With a commitment to quality, innovation, and continuous learning, we strive to be your trusted technology partner for all your digital needs.</p>
-                    <a href="#ai-products" class="btn">Explore Our AI Solutions</a>
+                    <h3>Leading AI Innovation in Education</h3>
+                    <p>Aasai Tech Providers Private Limited is an AI-focused technology company specializing in developing intelligent educational solutions. As a DPIIT-recognized startup and NVIDIA Inception Program member, we're at the forefront of transforming education through artificial intelligence.</p>
+                    <p>Our expertise lies in building advanced RAG (Retrieval-Augmented Generation) systems, AI chatbots, and intelligent learning platforms that make quality education accessible and personalized for every student.</p>
+                    <p>We combine cutting-edge AI research with practical applications to deliver solutions that truly make a difference in the educational landscape of India and beyond.</p>
+                    
+                    <div class="certifications-section">
+                        <div class="certifications-title">🏆 Our Recognition & Memberships</div>
+                        <div class="certifications-list">
+                            <div class="cert-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>DPIIT Recognized Startup</span>
+                            </div>
+                            <div class="cert-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>NVIDIA Inception Member</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#ai-products" class="btn" style="margin-top: 20px;">Explore Our AI Solutions</a>
                 </div>
             </div>
         </div>
@@ -1289,8 +1260,8 @@
     <section id="ai-products">
         <div class="container">
             <div class="ai-products-header">
-                <div class="ai-badge">🚀 AI Innovation</div>
-                <h2 class="ai-title">AI-Powered Educational Solutions</h2>
+                <div class="ai-badge">🤖 AI-Powered Solutions</div>
+                <h2 class="ai-title">Revolutionizing Education with AI</h2>
                 <p class="ai-subtitle">We specialize in building AI-powered RAG (Retrieval-Augmented Generation) systems designed for schools and colleges, enabling students to access personalized, intelligent learning support. Our goal is to transform education by integrating conversational AI, digital assistants, and smart learning platforms into the academic ecosystem.</p>
             </div>
 
@@ -1359,6 +1330,34 @@
         <div class="container">
             <h2>Our Services</h2>
             <div class="services-grid">
+                <!-- AI Development Service Card -->
+                <div class="service-card animate-fade-up">
+                    <div class="service-img">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>AI Development</h3>
+                        <p>We specialize in developing custom AI solutions including RAG systems, chatbots, and intelligent automation. Our AI-powered solutions leverage the latest in machine learning and natural language processing to deliver exceptional results.</p>
+                        
+                        <div class="service-features">
+                            <h4>AI Solutions:</h4>
+                            <ul>
+                                <li>Custom RAG Systems</li>
+                                <li>AI Chatbots & Virtual Assistants</li>
+                                <li>Machine Learning Models</li>
+                                <li>Natural Language Processing</li>
+                                <li>Computer Vision Applications</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-btn">
+                            <a href="#contact" class="btn">Discuss AI Project</a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- App Development Service Card -->
                 <div class="service-card animate-fade-up">
                     <div class="service-img">
@@ -1368,7 +1367,7 @@
                     </div>
                     <div class="service-content">
                         <h3>App Development</h3>
-                        <p>We deliver cutting-edge mobile applications for iOS and Android platforms that provide exceptional user experiences and drive business growth. Our team leverages AI technologies to create smarter, more intuitive apps that stand out in the market.</p>
+                        <p>We deliver cutting-edge mobile applications for iOS and Android platforms that provide exceptional user experiences. Our apps integrate AI technologies to create smarter, more intuitive solutions.</p>
                         
                         <div class="service-btn">
                             <a href="#contact" class="btn">Discuss Your App Project</a>
@@ -1385,7 +1384,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Web Development</h3>
-                        <p>Our web development services encompass everything from simple websites to complex web applications, e-commerce platforms, and custom business solutions. We create responsive, secure, and scalable web experiences that deliver results.</p>
+                        <p>Our web development services encompass everything from simple websites to complex web applications, e-commerce platforms, and custom business solutions with AI integration capabilities.</p>
                         
                         <div class="service-btn">
                             <a href="#contact" class="btn">Start Your Web Project</a>
@@ -1402,97 +1401,20 @@
                     </div>
                     <div class="service-content">
                         <h3>Technology Trainings</h3>
-                        <p>We offer comprehensive technical training programs designed to equip individuals and organizations with in-demand skills in various technology domains. Our industry-experienced trainers provide practical, hands-on learning experiences.</p>
+                        <p>We offer comprehensive technical training programs in AI, ML, and modern development technologies. Our industry-experienced trainers provide practical, hands-on learning experiences.</p>
                         
                         <div class="service-features">
                             <h4>Training Programs:</h4>
                             <ul>
-                                <li>Full Stack Development (React JS , React Native , Angular JS,Node js , JAVA , Python)</li>
-                                <li>DevOps and Cloud Computing (AWS , GCP , Azure , Runpod )</li>
-                                <li>Artificial Intelligence and Deep Learning</li>
+                                <li>Artificial Intelligence & Machine Learning</li>
+                                <li>Deep Learning & Neural Networks</li>
+                                <li>Full Stack Development (React, Node.js, Python)</li>
+                                <li>DevOps and Cloud Computing (AWS, GCP, Azure)</li>
                             </ul>
                         </div>
                         
                         <div class="service-btn">
                             <a href="#contact" class="btn">Enroll in Training</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Internship Section -->
-    <section class="internship-section" id="internship">
-        <div class="container">
-            <div class="internship-header">
-                <div class="internship-badge">🎓 Featured Program</div>
-                <h2 class="internship-title">Internship Programme for Engineering Students</h2>
-                <p class="internship-subtitle">Bridge the gap between academic knowledge and industry requirements with our comprehensive hands-on training program</p>
-            </div>
-
-            <div class="internship-content">
-                <div class="internship-grid">
-                    <div class="internship-card">
-                        <div class="card-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="card-title">Program Focus Areas</h3>
-                        <ul class="feature-list">
-                            <li>High-level concepts of Web/Mobile app development</li>
-                            <li>Client-Server communication fundamentals</li>
-                            <li>Building sample applications from scratch</li>
-                            <li>Deployment and testing methodologies</li>
-                        </ul>
-                    </div>
-
-                    <div class="internship-card">
-                        <div class="card-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="card-title">Program Benefits</h3>
-                        <ul class="feature-list">
-                            <li>Industry-recognized internship certificate</li>
-                            <li>Valuable experience for technical interviews</li>
-                            <li>Portfolio-worthy project development</li>
-                            <li>Post-internship support and resources</li>
-                        </ul>
-                    </div>
-
-                    <div class="internship-card">
-                        <div class="card-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="card-title">Perfect For</h3>
-                        <ul class="feature-list">
-                            <li>Engineering students who seeks IT career</li>
-                            <li>Anyone wanting practical development experience</li>
-                            <li>Students seeking industry exposure</li>
-                            <li>Fresh graduates entering the job market</li>
-                        </ul>
-                    </div>
-
-                    <div class="internship-card">
-                        <div class="card-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3 class="card-title">Certificate Value</h3>
-                        <ul class="feature-list">
-                            <li>Industry-recognized credentials for your resume</li>
-                            <li>Demonstrates practical project experience</li>
-                            <li>Validates your technical competencies</li>
-                            <li>Builds confidence</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="cta-section">
-                    <div class="cta-content">
-                        <h3 class="cta-title">Ready to Launch Your Tech Career?</h3>
-                        <p class="cta-text">Join hundreds of students who have transformed their careers through our comprehensive internship program. Limited seats available!</p>
-                        <div class="cta-buttons">
-                            <a href="#contact" class="btn btn-primary-internship">Apply Now</a>
-                            <a href="images/Aasai_Tech_Internship.pptx" class="btn btn-secondary-internship" download>Download Brochure</a>
                         </div>
                     </div>
                 </div>
@@ -1506,29 +1428,29 @@
             <h2>Career Opportunities</h2>
             <div class="careers-container">
                 <div class="careers-text animate-fade-up">
-                    <h3>Join Our Team</h3>
-                    <p>At Aasai Tech, we're always looking for talented and passionate individuals to join our team and help us push the boundaries of technology.</p>
-                    <p>We offer a dynamic work environment, competitive compensation, opportunities for growth and learning, and the chance to work on exciting projects with cutting-edge technologies.</p>
+                    <h3>Join Our AI Innovation Team</h3>
+                    <p>At Aasai Tech, we're building the future of AI-powered education. Join our team of passionate innovators working on cutting-edge AI solutions that impact millions of students.</p>
+                    <p>As a DPIIT-recognized startup and NVIDIA Inception member, we offer exciting opportunities to work with the latest AI technologies and make a real difference in education.</p>
                     <div class="career-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-brain"></i>
+                            <div>
+                                <h4>Work on AI Innovation</h4>
+                                <p>Build cutting-edge AI solutions using latest technologies in ML, NLP, and RAG systems</p>
+                            </div>
+                        </div>
                         <div class="benefit-item">
                             <i class="fas fa-rocket"></i>
                             <div>
                                 <h4>Career Growth</h4>
-                                <p>Clear paths for advancement and professional development opportunities</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-laptop-code"></i>
-                            <div>
-                                <h4>Cutting-Edge Projects</h4>
-                                <p>Work with the latest technologies on innovative solutions</p>
+                                <p>Clear paths for advancement in a fast-growing AI startup with professional development opportunities</p>
                             </div>
                         </div>
                         <div class="benefit-item">
                             <i class="fas fa-users"></i>
                             <div>
                                 <h4>Collaborative Culture</h4>
-                                <p>Supportive team environment that values diverse perspectives</p>
+                                <p>Work with talented AI engineers and researchers in a supportive environment</p>
                             </div>
                         </div>
                     </div>
@@ -1552,12 +1474,13 @@
                             <label for="position">Interested Position</label>
                             <select id="position" name="position" required>
                                 <option value="">Select a position</option>
-                                <option value="AI Engineer">AI Engineer</option>
+                                <option value="AI/ML Engineer">AI/ML Engineer</option>
+                                <option value="RAG System Developer">RAG System Developer</option>
+                                <option value="NLP Engineer">NLP Engineer</option>
+                                <option value="Full Stack Developer">Full Stack Developer</option>
                                 <option value="App Developer">App Developer</option>
-                                <option value="Web Developer">Web Developer</option>
                                 <option value="UI/UX Designer">UI/UX Designer</option>
                                 <option value="Technical Trainer">Technical Trainer</option>
-                                <option value="Project Manager">Project Manager</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -1640,7 +1563,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Aasai Tech</h3>
-                    <p>Fueling the future of technology through innovative AI-powered educational solutions, software development, and comprehensive technical training.</p>
+                    <p>A DPIIT-recognized startup and NVIDIA Inception member, powering the future of education through cutting-edge AI technology and innovative solutions.</p>
                     <div class="social-icons">
                         <a href="https://www.facebook.com/share/16oqTSW37R/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.linkedin.com/in/aasai-tech-providers-aa4abb367" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -1660,13 +1583,13 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Solutions</h3>
+                    <h3>AI Solutions</h3>
                     <ul>
-                        <li><a href="#ai-products">AI-Powered RAG Systems</a></li>
-                        <li><a href="#ai-products">Educational Chatbots</a></li>
-                        <li><a href="#services">App Development</a></li>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">Technology Training</a></li>
+                        <li><a href="#ai-products">College RAG Systems</a></li>
+                        <li><a href="#ai-products">School Learning Companions</a></li>
+                        <li><a href="#ai-products">Adaptive Learning AI</a></li>
+                        <li><a href="#services">Custom AI Development</a></li>
+                        <li><a href="#services">AI Training Programs</a></li>
                         <li><a href="https://ai.aasaitech.in" target="_blank">Live AI Demo</a></li>
                     </ul>
                 </div>
@@ -1681,7 +1604,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Aasai Tech Providers Private Limited. All Rights Reserved.</p>
+                <p>&copy; 2025 Aasai Tech Providers Private Limited. All Rights Reserved. | DPIIT Recognized | NVIDIA Inception Member</p>
             </div>
         </div>
     </footer>
@@ -1822,7 +1745,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Career Form Submission - FIXED VERSION
+    // Career Form Submission
     const careerForm = document.getElementById('career-form');
     const popup = document.getElementById('popup');
 
@@ -1873,7 +1796,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 showLoadingState(submitBtn, originalText);
                 
-                // ACTUAL API CALL - This was missing!
                 const result = await submitCareerForm(data);
                 
                 showPopup('Thank you for your application! We will review it and get back to you soon.', true);
@@ -1883,7 +1805,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Career form error:', error);
                 let errorMessage = 'Sorry, there was an error submitting your application. Please try again or contact us directly.';
                 
-                // More specific error handling
                 if (error.message.includes('Failed to fetch')) {
                     errorMessage = 'Unable to connect to server. Please check your internet connection and try again.';
                 } else if (error.message.includes('Server error')) {
@@ -1897,7 +1818,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Contact Form Submission - FIXED VERSION
+    // Contact Form Submission
     const contactForm = document.getElementById('contact-form');
 
     if (contactForm && popup) {
@@ -1942,7 +1863,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 showLoadingState(submitBtn, originalText);
                 
-                // ACTUAL API CALL - This was missing!
                 const result = await submitContactForm(data);
                 
                 showPopup('Thank you for your message! We will get back to you soon.', true);
@@ -1952,7 +1872,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Contact form error:', error);
                 let errorMessage = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
                 
-                // More specific error handling
                 if (error.message.includes('Failed to fetch')) {
                     errorMessage = 'Unable to connect to server. Please check your internet connection and try again.';
                 } else if (error.message.includes('Server error')) {
