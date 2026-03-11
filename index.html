@@ -1521,6 +1521,7 @@
             <button class="demo-chip" onclick="sendChip(this)">How does RAG work?</button>
             <button class="demo-chip" onclick="sendChip(this)">What services do you offer?</button>
             <button class="demo-chip" onclick="sendChip(this)">Can I get a custom AI?</button>
+            <button class="demo-chip" onclick="sendChip(this)">How to contact you?</button>
           </div>
           <div class="demo-input-area">
             <input type="text" id="demo-input" placeholder="Ask me anything about Aasai Tech AI…" maxlength="300">
@@ -1623,49 +1624,6 @@
           <span class="sr-num">06</span>
           <div><div class="sr-icon"><i class="fas fa-chalkboard-teacher"></i></div><div class="sr-name">Technical Training</div><p class="sr-desc">Hands-on corporate programs in AI/ML, full-stack development, and cloud technologies for teams at every level.</p></div>
           <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-header" style="text-align:center;margin-bottom:3.5rem">
-      <span class="section-label">💬 What People Say</span>
-      <h2 class="section-title">Trusted by Those Who <span style="color:var(--primary)">Build the Future</span></h2>
-      <p class="section-description">Feedback from clients, partners, and educators who've seen our AI solutions in action.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card fade-up">
-        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">The Aasai School AI completely changed how our students prepare for exams. They get instant answers from the actual textbook — no more endless scrolling through PDFs. It's like having a personal tutor available 24/7.</p>
-        <div class="testi-divider"></div>
-        <div class="testi-person">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--primary),var(--secondary))">SR</div>
-          <div><div class="testi-name">S. Rajkumar</div><div class="testi-role">School Principal, Tamil Nadu</div></div>
-        </div>
-      </div>
-      <div class="testi-card fade-up">
-        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">We integrated the Support Agent AI into our helpdesk. First-contact resolution jumped from 42% to over 80% in the first month. Setup was smooth — the Aasai Tech team handled everything end-to-end.</p>
-        <div class="testi-divider"></div>
-        <div class="testi-person">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--accent),var(--dpiit))">PK</div>
-          <div><div class="testi-name">Priya Krishnan</div><div class="testi-role">Operations Head, E-Commerce Co.</div></div>
-        </div>
-      </div>
-      <div class="testi-card fade-up">
-        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">As an NVIDIA Inception partner, Aasai Tech brings real technical depth. Their RAG implementation is production-grade and the team understood our requirements from day one. Highly recommended.</p>
-        <div class="testi-divider"></div>
-        <div class="testi-person">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--success),#0078d4)">AM</div>
-          <div><div class="testi-name">Arjun Mehta</div><div class="testi-role">CTO, EdTech Startup</div></div>
         </div>
       </div>
     </div>
@@ -1902,60 +1860,105 @@ const fadeObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
 
-// ── Live AI Demo ──
-let demoHistory = [];
+// ── Smart Local AI Demo ──
 let demoTyping = false;
 
-const SYSTEM_PROMPT = `You are the Aasai Tech AI assistant — helpful, professional, representing Aasai Tech Providers Private Limited, a DPIIT-recognized and NVIDIA Inception member AI startup in Tamil Nadu, India.
+const DEMO_QA = [
+  {
+    keys: ['school','edu','student','class','learn','syllabus','tamil','grade','tutor','smartedu'],
+    answer: '🎓 Aasai School AI is our flagship EdTech product — a RAG-powered platform for Tamil Nadu State Board students (Grades 9–12).\n\nStudents can ask questions in natural language (Tamil or English) and get instant, accurate answers directly from their textbooks. Teachers get analytics dashboards, and schools get multi-tenant admin controls.\n\n🔗 Try it at aasaischool.ai.aasaitech.in'
+  },
+  {
+    keys: ['rag','retrieval','augmented','generation','vector','embedding','how does','how it works','architecture'],
+    answer: '🧠 RAG (Retrieval-Augmented Generation) is the core technology behind all our AI products.\n\nHere\'s the flow:\n1️⃣ Your question gets converted to a vector (embedding) via Azure OpenAI\n2️⃣ MongoDB Atlas Vector Search finds the most relevant content chunks\n3️⃣ The LLM (Gemini / GPT) generates an answer grounded in that retrieved context\n\nResult: Accurate, hallucination-free answers from your actual data — not AI guesswork.'
+  },
+  {
+    keys: ['freeai','free ai','chat','gpt','chatgpt','conversation','openai'],
+    answer: '💬 FreeAI Chat is our ChatGPT-style conversational AI platform — free for anyone to use!\n\nBuilt on Azure OpenAI with:\n• Google OAuth login\n• Persistent conversation history\n• Streaming SSE responses\n• AWS Lambda serverless backend\n\n🔗 Try it live at freeai.aasaitech.in'
+  },
+  {
+    keys: ['ekart','ecommerce','e-commerce','shop','product','recommend','cart'],
+    answer: '🛒 E-Kart AI is our intelligent e-commerce assistant that transforms how customers discover products.\n\nFeatures:\n• Natural language product search\n• AI-powered recommendations\n• Context-aware conversations\n• Powered by Google Gemini\n\n🔗 See the demo at ekart.aasaitech.in'
+  },
+  {
+    keys: ['support','agent','helpdesk','customer','ticket','24/7','automat'],
+    answer: '🎧 Support Agent AI handles customer queries 24/7 — so your team doesn\'t have to.\n\nKey capabilities:\n• Instant RAG-based query resolution\n• Smart ticket routing & escalation\n• Seamless helpdesk integration\n• White-label ready\n• Full analytics dashboard\n\n🔗 Explore at supportagent.aasaitech.in'
+  },
+  {
+    keys: ['service','offer','do you','what can','develop','build','create','web','mobile','app','cloud','train'],
+    answer: '🚀 Aasai Tech offers 6 core services:\n\n1. AI & LLM Development — custom RAG, chatbots, NLP\n2. Mobile App Development — iOS & Android with AI\n3. Web Development — SaaS platforms & portals\n4. Cloud & DevOps — AWS, Azure, GCP, Cloudflare\n5. System Integration — APIs, CRMs, workflows\n6. Technical Training — AI/ML corporate programs\n\nWant to discuss a project? Email us at info@aasaitech.in'
+  },
+  {
+    keys: ['custom','my own','white label','whitelabel','platform','our','for us','integrate'],
+    answer: '⚡ Absolutely! Our white-label AI platform lets you deploy a custom AI assistant under your own brand in days.\n\nProcess:\n1. Upload your documents / knowledge base\n2. We embed & index everything\n3. Your branded AI goes live on your domain\n4. Monitor & improve via dashboard\n\nUsed by schools, e-commerce brands, and support teams. Contact info@aasaitech.in to get started!'
+  },
+  {
+    keys: ['nvidia','dpiit','inception','recognition','startup india','certified','member'],
+    answer: '🏆 Aasai Tech holds two prestigious recognitions:\n\n🟢 NVIDIA Inception Program — for AI-first startups building cutting-edge technology\n🟠 DPIIT Recognized Startup — Government of India recognition under Startup India\n\nWe also build on top of: AWS, Microsoft Azure OpenAI, Google Cloud, MongoDB Atlas, and Cloudflare.'
+  },
+  {
+    keys: ['price','cost','pricing','plan','how much','fee','pay','charge'],
+    answer: '💰 Pricing varies by product and scale.\n\nFor a custom quote based on your needs:\n📧 Email: info@aasaitech.in\n📞 Phone: +91 89391 34777\n\nWe offer flexible engagement models — project-based, monthly SaaS, and enterprise licensing. Reach out and we\'ll put together a proposal within 24 hours.'
+  },
+  {
+    keys: ['contact','reach','email','phone','talk','meet','demo','call','schedule'],
+    answer: '📬 We\'d love to connect!\n\n📧 Email: info@aasaitech.in\n📞 Phone: +91 89391 34777\n📍 Location: Devapandalam, Tamil Nadu, India\n\nOr scroll down to our contact form and send us a message directly. We respond within 24 hours on business days.'
+  },
+  {
+    keys: ['who','what is aasai','about','company','team','founded','tamil'],
+    answer: '👋 Aasai Tech Providers Private Limited is an AI-first software company based in Tamil Nadu, India.\n\nWe build production-grade AI products (RAG systems, chat platforms, support automation) and offer custom AI development services.\n\nRecognized by: NVIDIA Inception Program & DPIIT (Govt. of India)\nTech stack: Azure OpenAI, Google Gemini, MongoDB Atlas, AWS Lambda\n\nVisit us at aasaitech.in'
+  }
+];
 
-About Aasai Tech:
-- DPIIT-recognized startup & NVIDIA Inception Program member, Tamil Nadu
-- Products: Aasai School AI (educational RAG for TN State Board grades 9-12, bilingual Tamil/English), FreeAI Chat (Azure OpenAI ChatGPT-style platform), E-Kart AI (e-commerce AI assistant), Support Agent AI (24/7 customer support automation)
-- Services: AI & LLM Development, Mobile Apps, Web Development, Cloud & DevOps, System Integration, Technical Training
-- Tech stack: Azure OpenAI, Google Gemini, MongoDB Atlas Vector Search, AWS Lambda, Cloudflare, Google Document AI
-- Contact: info@aasaitech.in | +91 89391 34777
+const FALLBACK_RESPONSES = [
+  "That's a great question! For detailed information on this, please reach out to us directly at info@aasaitech.in or call +91 89391 34777 — our team will get back to you within 24 hours. 🚀",
+  "I'm best at answering questions about Aasai Tech's AI products and services. For anything specific to your use case, email info@aasaitech.in and we'll put together a personalised response!",
+  "Interesting! That's a bit outside my demo scope, but our team can definitely help. Drop us a message at info@aasaitech.in 📬"
+];
 
-Be friendly, concise. Keep responses under 130 words. If asked something outside your scope, suggest contacting info@aasaitech.in.`;
+let fallbackIdx = 0;
 
-async function sendDemo() {
+function getBotReply(msg) {
+  const lower = msg.toLowerCase();
+  for (const qa of DEMO_QA) {
+    if (qa.keys.some(k => lower.includes(k))) return qa.answer;
+  }
+  return FALLBACK_RESPONSES[fallbackIdx++ % FALLBACK_RESPONSES.length];
+}
+
+function sendDemo() {
   if (demoTyping) return;
   const input = document.getElementById('demo-input');
   const msg = input.value.trim();
   if (!msg) return;
   input.value = '';
   addBubble('user', msg);
-  demoHistory.push({ role: 'user', content: msg });
   document.getElementById('demo-suggestions').style.display = 'none';
-  showTyping();
-  document.getElementById('demo-send').disabled = true;
   demoTyping = true;
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, system: SYSTEM_PROMPT, messages: demoHistory })
-    });
-    const data = await response.json();
-    const reply = data.content?.[0]?.text || "I'm having a moment — please try again!";
+  document.getElementById('demo-send').disabled = true;
+  showTyping();
+  // Simulate realistic typing delay (600–1200ms)
+  const delay = 600 + Math.random() * 600;
+  setTimeout(() => {
     removeTyping();
-    addBubble('bot', reply);
-    demoHistory.push({ role: 'assistant', content: reply });
-  } catch (err) {
-    removeTyping();
-    addBubble('bot', "Connection issue. Reach us at info@aasaitech.in");
-  } finally {
+    addBubble('bot', getBotReply(msg));
     demoTyping = false;
     document.getElementById('demo-send').disabled = false;
-  }
+  }, delay);
 }
 
-function sendChip(el) { document.getElementById('demo-input').value = el.textContent; sendDemo(); }
+function sendChip(el) {
+  document.getElementById('demo-input').value = el.textContent;
+  sendDemo();
+}
+
 
 function addBubble(role, text) {
   const chat = document.getElementById('demo-chat');
   const wrap = document.createElement('div');
   wrap.className = `chat-bubble ${role}`;
-  wrap.innerHTML = `<div class="chat-avatar">${role === 'user' ? 'You' : 'AI'}</div><div class="chat-text">${text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')}</div>`;
+  const safe = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+  wrap.innerHTML = `<div class="chat-avatar">${role === 'user' ? 'You' : 'AI'}</div><div class="chat-text">${safe}</div>`;
   chat.appendChild(wrap);
   chat.scrollTop = chat.scrollHeight;
 }
