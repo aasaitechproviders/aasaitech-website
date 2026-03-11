@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aasai Tech | AI-Powered Educational Solutions & Engineering Internships Tamil Nadu</title>
-  <meta name="description" content="Aasai Tech - Leading IT company in Tamil Nadu offering AI-powered educational solutions, engineering internships, web development, mobile app development, and software training.">
-  <meta name="keywords" content="Aasai Tech, AI educational solutions, RAG systems, engineering internships Tamil Nadu, web development Coimbatore, mobile app development, software training, AI chatbots, educational technology">
-  <meta name="author" content="Aasai Tech Providers Private Limited">
+  <title>Aasai Tech | Enterprise AI Solutions | Tamil Nadu, India</title>
+  <meta name="description" content="Aasai Tech – DPIIT-recognized & NVIDIA Inception member. Enterprise AI, RAG systems, intelligent chatbots, web & mobile development from Tamil Nadu.">
+  <meta name="keywords" content="Aasai Tech, AI solutions Tamil Nadu, RAG systems, AI chatbots, DPIIT startup, NVIDIA Inception, software development">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="./favicon.png" />
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WYLK8PWBP5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,1930 +16,1356 @@
     gtag('config', 'G-WYLK8PWBP5');
   </script>
 
-  <!-- Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  
+
   <style>
     :root {
-        --primary: #2563eb;
-        --primary-dark: #1d4ed8;
-        --secondary: #4f46e5;
-        --accent: #f59e0b;
-        --light: #f8fafc;
-        --dark: #1e293b;
-        --text: #334155;
-        --success: #22c55e;
-        --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --ai-accent: #8b5cf6;
-        --nvidia-green: #76b900;
+      --bg:        #f4f2ec;
+      --bg2:       #eceae2;
+      --surface:   #ffffff;
+      --surface2:  #faf9f6;
+      --ink:       #110f0e;
+      --ink2:      #524d47;
+      --ink3:      #a09890;
+      --border:    #dedad0;
+      --border2:   #ccc8be;
+      --blue:      #2b24e8;
+      --blue-soft: rgba(43,36,232,0.08);
+      --blue-mid:  rgba(43,36,232,0.15);
+      --blue-glow: rgba(43,36,232,0.22);
+      --orange:    #e84c0a;
+      --orange-s:  rgba(232,76,10,0.09);
+      --green:     #1a7a4a;
+      --green-s:   rgba(26,122,74,0.1);
+      --nvidia:    #4d7c00;
+      --nvidia-s:  rgba(77,124,0,0.1);
+      --dpiit:     #c44200;
+      --dpiit-s:   rgba(196,66,0,0.1);
+      --r: 12px;
+      --r2: 8px;
     }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 80px;
-    }
-
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:80px; }
     body {
-        color: var(--text);
-        background: var(--light);
-        line-height: 1.6;
-        overflow-x: hidden;
-        width: 100%;
-        -webkit-text-size-adjust: 100%;
+      font-family: 'Instrument Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
+      background-size: 220px;
+      opacity: 1;
+    }
     .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 72px);
     }
 
-    section {
-        padding: 80px 0;
-        min-height: 100vh;
-        display: flex;
+    /* ── NAV ── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(244,242,236,0.88);
+      backdrop-filter: blur(18px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: 0 2px 32px rgba(17,15,14,0.08); }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo img {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .logo-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+    .logo-name em { font-style: normal; color: var(--blue); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 2.25rem;
+    }
+    .nav-links a {
+      color: var(--ink2);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      background: var(--ink);
+      color: var(--bg) !important;
+      border-radius: 6px;
+      font-weight: 600 !important;
+      font-size: 0.85rem !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-btn:hover { background: var(--blue) !important; color: #fff !important; transform: translateY(-1px); }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: 38px; height: 38px;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 130px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: var(--surface);
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+      border-left: 1px solid var(--border);
+      z-index: 0;
+    }
+    .hero-wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: var(--ink3);
+      margin-bottom: 1.6rem;
+      animation: heroIn 0.6s ease both;
+    }
+    .tag-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:0.35; transform:scale(0.7); }
+    }
+    .hero-h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2px;
+      margin-bottom: 1.5rem;
+      animation: heroIn 0.6s 0.08s ease both;
+    }
+    .hero-h1 .w-light { font-weight: 300; color: var(--ink2); }
+    .hero-h1 .w-blue  { color: var(--blue); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink2);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 2rem;
+      animation: heroIn 0.6s 0.16s ease both;
+    }
+    .trust-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      animation: heroIn 0.6s 0.24s ease both;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 13px;
+      border-radius: 40px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      border: 1px solid;
+    }
+    .chip.nvidia { background: var(--nvidia-s); border-color: rgba(77,124,0,0.25); color: var(--nvidia); }
+    .chip.dpiit  { background: var(--dpiit-s);  border-color: rgba(196,66,0,0.25);  color: var(--dpiit); }
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      animation: heroIn 0.6s 0.32s ease both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--r2);
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+    .btn-ink {
+      background: var(--ink);
+      color: var(--bg);
+      box-shadow: 0 2px 12px rgba(17,15,14,0.15);
+    }
+    .btn-ink:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px var(--blue-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--border2);
+    }
+    .btn-outline:hover { border-color: var(--ink); background: var(--surface); }
+
+    /* Hero dashboard */
+    .hero-right { position: relative; animation: heroIn 0.7s 0.2s ease both; }
+    .hero-badge-float {
+      position: absolute;
+      top: -18px; right: -18px;
+      background: var(--blue);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.3;
+      box-shadow: 0 8px 24px var(--blue-glow);
+      animation: floatY 4s ease-in-out infinite;
+    }
+    .hero-badge-float span { display: block; font-size: 1.05rem; }
+    @keyframes floatY {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+    .dash-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: 0 8px 48px rgba(17,15,14,0.1);
+      overflow: hidden;
+    }
+    .dash-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .dash-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dash-url {
+      flex: 1;
+      font-size: 0.7rem;
+      font-weight: 500;
+      font-family: 'DM Mono', monospace;
+      color: var(--ink3);
+      text-align: center;
+    }
+    .dash-body { padding: 18px; }
+    .dash-sec-label {
+      font-size: 0.63rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--ink3);
+      margin-bottom: 10px;
+    }
+    .dp-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 11px;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .dp-row:hover { background: var(--blue-soft); border-color: var(--blue-mid); }
+    .dp-icon {
+      width: 30px; height: 30px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .dp-info { flex: 1; }
+    .dp-name { font-size: 0.82rem; font-weight: 600; line-height: 1.2; }
+    .dp-sub  { font-size: 0.67rem; color: var(--ink3); font-family: 'DM Mono', monospace; }
+    .dp-live {
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: var(--green-s);
+      color: var(--green);
+      border: 1px solid rgba(26,122,74,0.2);
+    }
+    .dash-div { height: 1px; background: var(--border); margin: 13px 0; }
+    .dash-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .ds-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+    .ds-val {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .ds-lbl { font-size: 0.6rem; color: var(--ink3); margin-top: 3px; font-family: 'DM Mono', monospace; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 1;
+      opacity: 0.4;
+    }
+    .scroll-line {
+      width: 1px; height: 38px;
+      background: linear-gradient(to bottom, var(--border2), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { transform:scaleY(1); opacity:0.5; }
+      50%      { transform:scaleY(0.5); opacity:1; }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 7rem 0; }
+    .s-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+    .s-eyebrow::after {
+      content: '';
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--blue);
+      opacity: 0.45;
+    }
+    .s-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.08;
+      margin-bottom: 1rem;
+    }
+    .s-title .dim { font-weight: 300; color: var(--ink2); }
+    .s-title .blu { color: var(--blue); }
+    .s-desc {
+      font-size: 1rem;
+      color: var(--ink2);
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    /* ── STATS ── */
+    #stats { padding: 0; background: var(--ink); }
+    .stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-cell {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell:hover { background: rgba(255,255,255,0.03); }
+    .stat-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-num sup { font-size: 1.1rem; letter-spacing: 0; color: var(--blue); }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.38); line-height: 1.5; }
+
+    /* ── PRODUCTS BENTO ── */
+    #products { background: var(--surface); }
+    .products-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      gap: 2rem;
+    }
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.25rem;
+    }
+    .bento-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .bento-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .bento-card:hover {
+      border-color: rgba(43,36,232,0.3);
+      box-shadow: 0 12px 48px rgba(43,36,232,0.1);
+      transform: translateY(-3px);
+    }
+    .bento-card:hover::after { transform: scaleX(1); }
+    .bc-span-5 { grid-column: span 5; }
+    .bc-span-7 { grid-column: span 7; }
+    .bc-span-4 { grid-column: span 4; }
+    .bc-icon {
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid;
+    }
+    .bc-tag {
+      display: inline-block;
+      font-size: 0.67rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+      background: var(--blue-soft);
+      color: var(--blue);
+      border: 1px solid var(--blue-mid);
+    }
+    .bc-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.65rem;
+    }
+    .bc-desc { font-size: 0.875rem; color: var(--ink2); line-height: 1.65; margin-bottom: 1.25rem; }
+    .bc-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+    .bc-pill {
+      font-size: 0.67rem;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--ink2);
+      font-family: 'DM Mono', monospace;
+    }
+    .bc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .bc-link:hover { gap: 10px; }
+    .bc-number {
+      position: absolute;
+      bottom: 1.25rem; right: 1.5rem;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      pointer-events: none;
+      transition: color 0.3s;
+    }
+    .bento-card:hover .bc-number { color: var(--blue-soft); }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .services-sticky { position: sticky; top: 100px; }
+    .service-row {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--border);
+      cursor: default;
+    }
+    .service-row:last-child { border-bottom: 1px solid var(--border); }
+    .service-row:hover .sr-num  { color: var(--blue); }
+    .service-row:hover .sr-icon { background: var(--blue-soft); border-color: var(--blue-mid); color: var(--blue); }
+    .service-row:hover .sr-name { color: var(--blue); }
+    .sr-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink3);
+      padding-top: 4px;
+      transition: color 0.2s;
+    }
+    .sr-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--ink2);
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      transition: all 0.2s;
+    }
+    .sr-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      margin-bottom: 0.4rem;
+      transition: color 0.2s;
+    }
+    .sr-desc { font-size: 0.85rem; color: var(--ink2); line-height: 1.65; }
+    .sr-arrow {
+      color: var(--ink3);
+      font-size: 0.8rem;
+      padding-top: 4px;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .service-row:hover .sr-arrow { transform: translate(3px, -3px); color: var(--blue); }
+
+    /* ── CLIENTS ── */
+    #clients { background: var(--surface); }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .client-card {
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--bg);
+      transition: all 0.3s;
+    }
+    .client-card:hover {
+      border-color: rgba(43,36,232,0.3);
+      box-shadow: 0 12px 48px rgba(43,36,232,0.1);
+      transform: translateY(-3px);
+    }
+    .client-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 2.5rem;
+    }
+    .client-body { padding: 1.75rem 2rem; }
+    .client-cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--ink3);
+      font-family: 'DM Mono', monospace;
+      margin-bottom: 0.5rem;
+    }
+    .client-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+    }
+    .client-desc { font-size: 0.875rem; color: var(--ink2); line-height: 1.65; margin-bottom: 1.25rem; }
+    .client-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .client-link:hover { gap: 10px; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .ci-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ci-row:first-child { border-top: 1px solid var(--border); }
+    .ci-icon-box {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      background: var(--blue-soft);
+      border: 1px solid var(--blue-mid);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 0.85rem;
+    }
+    .ci-data h5 {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ink3);
+      margin-bottom: 2px;
+    }
+    .ci-data p { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+    .social-line { display: flex; gap: 8px; margin-top: 1.5rem; }
+    .soc {
+      width: 38px; height: 38px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .soc:hover { background: var(--blue); border-color: var(--blue); color: #fff; transform: translateY(-2px); }
+    .form-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 2.5rem;
+    }
+    .form-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.3px;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .fg { margin-bottom: 1.1rem; }
+    .fg label {
+      display: block;
+      font-size: 0.73rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--ink2);
+      margin-bottom: 0.45rem;
+    }
+    .fg input, .fg textarea, .fg select {
+      width: 100%;
+      padding: 10px 13px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r2);
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .fg input:focus, .fg textarea:focus, .fg select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-soft);
+      background: #fff;
+    }
+    .fg textarea { min-height: 120px; resize: vertical; }
+    .fg select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%232b24e8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 12px) center;
+      padding-right: 2.5rem;
+    }
+    .fg select option { background: #fff; color: var(--ink); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); padding: 4rem 0 2rem; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .logo-name { color: #fff; }
+    .footer-brand p {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.38);
+      margin-top: 1rem;
+      line-height: 1.7;
+      max-width: 240px;
+    }
+    .footer-col h5 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.32);
+      text-decoration: none;
+      font-size: 0.84rem;
+      line-height: 2.3;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.82); }
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.22); }
+    .fbadges { display: flex; gap: 8px; }
+    .fbadge {
+      font-size: 0.67rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .fbadge.nv { background: rgba(118,185,0,0.12); color: #76b900; border: 1px solid rgba(118,185,0,0.2); }
+    .fbadge.dp { background: rgba(255,107,53,0.12); color: #ff6b35; border: 1px solid rgba(255,107,53,0.2); }
+
+    /* ── POPUP ── */
+    .popup {
+      position: fixed;
+      top: 84px; right: 20px;
+      max-width: 340px;
+      padding: 1rem 1.4rem;
+      border-radius: var(--r2);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 48px rgba(17,15,14,0.15);
+      transform: translateX(calc(100% + 30px));
+      transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+      z-index: 9999;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .popup.show { transform: translateX(0); }
+    .popup.success { border-color: rgba(26,122,74,0.4); color: var(--green); }
+    .popup.error   { border-color: rgba(220,38,38,0.3); color: #dc2626; }
+
+    /* ── ANIMATION ── */
+    @keyframes heroIn {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.in { opacity:1; transform:translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .bc-span-5 { grid-column: span 12; }
+      .bc-span-7 { grid-column: span 12; }
+      .bc-span-4 { grid-column: span 6; }
+    }
+    @media (max-width: 1024px) {
+      .services-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .services-sticky { position: static; }
+      .hero-wrap { grid-template-columns: 1fr; }
+      #hero::before { width:100%; clip-path:none; top:58%; height:45%; border-left:none; border-top:1px solid var(--border); }
+      .contact-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 5rem 0; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(244,242,236,0.97);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
-    }
-
-    h1, h2, h3, h4 {
-        color: var(--dark);
-        margin-bottom: 20px;
-    }
-
-    h1 { font-size: 3.5rem; font-weight: 700; }
-    h2 { 
-        font-size: 2.5rem; 
-        text-align: center; 
-        position: relative; 
-        margin-bottom: 50px; 
-    }
-
-    h2::after {
-        content: '';
-        position: absolute;
-        width: 80px;
-        height: 4px;
-        background: var(--primary);
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 2px;
-    }
-
-    p { margin-bottom: 15px; }
-    img { max-width: 100%; height: auto; }
-
-    .btn {
-        display: inline-block;
-        padding: 14px 30px;
-        background: var(--primary);
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
-        text-align: center;
-    }
-
-    .btn:hover {
-        background: var(--primary-dark);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    }
-
-    .btn-secondary {
-        background: var(--accent);
-        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
-    }
-
-    .btn-secondary:hover {
-        background: #e69008;
-        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
-    }
-
-    .btn-ai {
-        background: var(--ai-gradient);
-        color: white;
-        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
-    }
-
-    .btn-ai:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-    }
-
-    /* Header */
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        z-index: 1000;
-        transition: all 0.3s ease;
-    }
-
-    .header-content {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 5px 0;
-    }
-
-    .hdr-midl {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .com-logo img {
-        width: 75px;
-        height: auto;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--dark);
-        text-decoration: none;
-    }
-
-    .logo span { color: var(--primary); }
-
-    nav ul {
-        display: flex;
-        list-style: none;
-    }
-
-    nav ul li {
-        margin-left: 30px;
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 500;
-        transition: color 0.3s ease;
-        position: relative;
-        padding: 5px 0;
-    }
-
-    nav ul li a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        transition: width 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: var(--primary);
-    }
-
-    nav ul li a:hover::after {
-        width: 100%;
-    }
-
-    .mobile-toggle {
-        display: none;
-        cursor: pointer;
-        font-size: 1.5rem;
-        color: var(--dark);
-        transition: color 0.3s ease;
-        background: none;
-        border: none;
-        padding: 5px;
-        z-index: 1001;
-    }
-
-    .mobile-toggle:hover {
-        color: var(--primary);
-    }
-
-    /* Hero Section */
-    #home {
-        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), var(--ai-gradient);
-        color: white;
-        text-align: center;
-        position: relative;
-        padding: 190px 0 50px 0;
-        min-height: auto;
-    }
-
-    .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-        padding: 0 15px;
-    }
-
-    .hero-content h1, .hero-content p { color: white; }
-
-    .hero-content h1 {
-        margin-bottom: 30px;
-        animation: fadeInDown 1s both;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-        margin-bottom: 40px;
-        animation: fadeInUp 1s both;
-        animation-delay: 0.3s;
-    }
-
-    .hero-btns {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 20px;
-        animation: fadeInUp 1s both;
-        animation-delay: 0.6s;
-    }
-
-    /* Certifications Badge Section */
-    .certifications-badges {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        margin-top: 40px;
-        flex-wrap: wrap;
-        animation: fadeInUp 1s both;
-        animation-delay: 0.9s;
-    }
-
-    .cert-badge {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 15px 25px;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .cert-badge:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .cert-badge img {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
-    }
-
-    .cert-badge-text {
-        text-align: left;
-    }
-
-    .cert-badge-title {
-        font-size: 0.75rem;
-        color: var(--text);
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 2px;
-    }
-
-    .cert-badge-org {
-        font-size: 1rem;
-        color: var(--dark);
-        font-weight: 700;
-    }
-
-    .nvidia-badge {
-        border-color: var(--nvidia-green);
-    }
-
-    .nvidia-badge .cert-badge-org {
-        color: var(--nvidia-green);
-    }
-
-    .dpiit-badge .cert-badge-org {
-        color: #ff6b35;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-        from { opacity: 0; transform: translateY(-30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* About Section */
-    .about-content {
-        display: flex;
-        gap: 50px;
-        align-items: center;
-    }
-
-    .about-img {
-        flex: 1;
-        position: relative;
-    }
-
-    .about-img img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .about-text {
-        flex: 1;
-    }
-
-    .about-text h3 {
-        font-size: 2rem;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .about-text h3::after {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 3px;
-        background: var(--accent);
-        bottom: 0;
-        left: 0;
-    }
-
-    .certifications-section {
-        margin-top: 40px;
-        padding: 30px;
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-        border-radius: 15px;
-        border: 2px solid rgba(139, 92, 246, 0.2);
-    }
-
-    .certifications-title {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .certifications-list {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cert-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    .cert-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .cert-item i {
-        font-size: 1.5rem;
-        color: var(--ai-accent);
-    }
-
-    .cert-item span {
-        font-weight: 600;
-        color: var(--dark);
-    }
-
-    /* AI Products Section */
-    #ai-products {
-        background: var(--ai-gradient);
-        color: white;
-        position: relative;
-        overflow: hidden;
-    }
-
-    #ai-products::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
-        opacity: 0.3;
-    }
-
-    .ai-products-header {
-        text-align: center;
-        margin-bottom: 80px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .ai-badge {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 30px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .ai-title {
-        font-size: 3rem;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 25px;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .ai-subtitle {
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.9);
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    .ai-products-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        margin-bottom: 60px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .ai-product-card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        padding: 35px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .ai-product-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 5px;
-        background: var(--ai-gradient);
-    }
-
-    .ai-product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
-    }
-
-    .ai-icon {
-        width: 70px;
-        height: 70px;
-        background: var(--ai-gradient);
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 25px auto;
-        font-size: 2rem;
-        color: white;
-        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
-    }
-
-    .ai-product-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--dark);
-        margin-bottom: 15px;
-    }
-
-    .ai-product-desc {
-        color: var(--text);
-        margin-bottom: 25px;
-        line-height: 1.6;
-    }
-
-    .ai-features {
-        list-style: none;
-        margin-bottom: 30px;
-    }
-
-    .ai-features li {
-        position: relative;
-        padding-left: 25px;
-        margin-bottom: 10px;
-        color: var(--text);
-        font-size: 0.95rem;
-    }
-
-    .ai-features li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 15px;
-        height: 15px;
-        background: var(--ai-gradient);
-        border-radius: 50%;
-    }
-
-    .ai-features li::after {
-        content: '✓';
-        position: absolute;
-        left: 4px;
-        top: 4px;
-        color: white;
-        font-size: 0.7rem;
-        font-weight: bold;
-    }
-
-    .demo-section {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        margin-top: 60px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        position: relative;
-        z-index: 2;
-    }
-
-    .demo-title {
-        font-size: 2rem;
-        color: white;
-        margin-bottom: 20px;
-        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .demo-text {
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 30px;
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .btn-secondary-internship {
-        display: inline-block;
-        padding: 18px 40px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.4s ease;
-        background: transparent;
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-    }
-
-    .btn-secondary-internship:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: white;
-        transform: translateY(-3px);
-    }
-
-    /* Services Section */
-    #services { background: var(--light); }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-    }
-
-    .service-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        transition: all 0.4s ease;
-    }
-
-    .service-card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    }
-
-    .service-img {
-        height: 220px;
-        position: relative;
-        overflow: hidden;
-        background: var(--gradient-3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .service-icon {
-        font-size: 4rem;
-        color: white;
-        transition: all 0.3s ease;
-    }
-
-    .service-card:hover .service-icon {
-        transform: scale(1.1);
-    }
-
-    .service-content {
-        padding: 30px;
-    }
-
-    .service-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .service-content h3::after {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 3px;
-        background: var(--primary);
-        bottom: 0;
-        left: 0;
-    }
-
-    .service-features {
-        margin-top: 25px;
-    }
-
-    .service-features h4 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
-        color: var(--primary);
-        font-weight: 600;
-    }
-
-    .service-features ul {
-        list-style-type: none;
-    }
-
-    .service-features ul li {
-        position: relative;
-        padding-left: 28px;
-        margin-bottom: 12px;
-    }
-
-    .service-features ul li:before {
-        content: "\f00c";
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        position: absolute;
-        left: 0;
-        color: var(--primary);
-    }
-
-    .service-btn {
-        margin-top: 25px;
-        text-align: center;
-    }
-
-    /* Careers Section */
-    #careers { 
-        background: var(--light); 
-    }
-
-    .careers-container {
-        display: flex;
-        gap: 50px;
-        align-items: center;
-    }
-
-    .careers-text { 
-        flex: 1; 
-    }
-
-    .careers-text h3 {
-        font-size: 2rem;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .careers-text h3::after {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 3px;
-        background: var(--accent);
-        bottom: 0;
-        left: 0;
-    }
-
-    .career-benefits { 
-        margin-top: 30px; 
-    }
-
-    .benefit-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 20px;
-    }
-
-    .benefit-item i {
-        margin-right: 15px;
-        font-size: 1.5rem;
-        color: var(--primary);
-    }
-
-    .careers-form {
-        flex: 1;
-        background: white;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .careers-form h3 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 1.5rem;
-    }
-
-    /* Contact Section */
-    #contact { 
-        background: white; 
-    }
-
-    .contact-container {
-        display: flex;
-        gap: 50px;
-    }
-
-    .contact-info { 
-        flex: 1; 
-    }
-
-    .contact-info h3 {
-        font-size: 2rem;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .contact-info h3::after {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 3px;
-        background: var(--accent);
-        bottom: 0;
-        left: 0;
-    }
-
-    .contact-info-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 30px;
-    }
-
-    .contact-info-item i {
-        width: 60px;
-        height: 60px;
-        background: var(--primary);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        color: white;
-        font-size: 1.5rem;
-        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
-        flex-shrink: 0;
-    }
-
-    .social-icons {
-        display: flex;
-        gap: 15px;
-        margin-top: 40px;
-        flex-wrap: wrap;
-    }
-
-    .social-icons a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        background: var(--primary);
-        color: white;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        font-size: 1.2rem;
-        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
-    }
-
-    .social-icons a:hover {
-        background: var(--primary-dark);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
-    }
-
-    .contact-form {
-        flex: 1;
-        background: white;
-        padding: 40px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .contact-form h3 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 1.5rem;
-    }
-
-    /* Form Styles */
-    .form-group { margin-bottom: 25px; }
-
-    .form-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 500;
-    }
-
-    .form-group input, 
-    .form-group textarea,
-    .form-group select {
-        width: 100%;
-        padding: 14px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: all 0.3s ease;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
-
-    .form-group input:focus, 
-    .form-group textarea:focus,
-    .form-group select:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        outline: none;
-    }
-
-    .form-group textarea {
-        height: 150px;
-        resize: vertical;
-    }
-
-    .form-group select {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: calc(100% - 15px) center;
-        padding-right: 40px;
-    }
-
-    /* Footer */
-    footer {
-        background: var(--dark);
-        color: white;
-        padding: 80px 0 20px;
-    }
-
-    .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 40px;
-        margin-bottom: 40px;
-    }
-
-    .footer-column h3 {
-        color: white;
-        font-size: 1.3rem;
-        margin-bottom: 25px;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .footer-column h3::after {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 3px;
-        background: var(--primary);
-        bottom: 0;
-        left: 0;
-    }
-
-    .footer-column p {
-        color: #ddd;
-        margin-bottom: 25px;
-    }
-
-    .footer-column ul {
-        list-style: none;
-    }
-
-    .footer-column ul li {
-        margin-bottom: 15px;
-    }
-
-    .footer-column ul li a {
-        color: #ddd;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .footer-column ul li a:hover {
-        color: var(--primary);
-        padding-left: 5px;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Popup Message */
-    .popup {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        max-width: 400px;
-        padding: 16px 24px;
-        border-radius: 8px;
-        color: white;
-        font-weight: 500;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        transform: translateX(120%);
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        z-index: 10000;
-        opacity: 0;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    .popup.show {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    .popup.success {
-        background: linear-gradient(135deg, #22c55e, #16a34a);
-    }
-
-    .popup.error {
-        background: linear-gradient(135deg, #ef4444, #dc2626);
-    }
-
-    /* Animations */
-    .animate-fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-    }
-
-    .animate-fade-in {
-        opacity: 0;
-        transition: opacity 0.8s ease;
-    }
-
-    .animate-active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-        h1 { font-size: 3rem; }
-        h2 { font-size: 2.2rem; }
-        .services-grid, .ai-products-grid, .clients-grid {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-    }
-
-    @media (max-width: 992px) {
-        h1 { font-size: 2.5rem; }
-        h2 { font-size: 2rem; }
-        .about-content, .careers-container, .contact-container {
-            flex-direction: column;
-        }
-        .hero-btns {
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
-        .ai-title { font-size: 2.5rem; }
-    }
-
-    @media (max-width: 768px) {
-        section {
-            padding: 50px 0;
-            min-height: auto;
-        }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; }
-        
-        .mobile-toggle { display: block; }
-        
-        nav {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 80%;
-            height: 100vh;
-            background: white;
-            padding: 80px 20px 20px;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            overflow-y: auto;
-            z-index: 1000;
-        }
-        
-        nav.active { left: 0; }
-        
-        nav ul { flex-direction: column; }
-        
-        nav ul li {
-            margin: 15px 0;
-            margin-left: 0;
-        }
-        
-        nav ul li a {
-            display: block;
-            padding: 10px 0;
-            font-size: 1.1rem;
-        }
-        
-        .services-grid, .ai-products-grid, .clients-grid { 
-            grid-template-columns: 1fr; 
-        }
-        .careers-form, .contact-form { padding: 25px; }
-        .ai-title { font-size: 2rem; }
-        .certifications-badges {
-            flex-direction: column;
-            gap: 15px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .container { padding: 0 15px; }
-        h1 { font-size: 1.8rem; }
-        h2 { font-size: 1.6rem; }
-        .ai-title { font-size: 1.8rem; }
-        .btn { padding: 12px 20px; font-size: 0.9rem; }
-    }
-
-    /* iOS input zoom fix */
-    @media screen and (-webkit-min-device-pixel-ratio:0) { 
-        select, textarea, input[type="text"], input[type="password"], 
-        input[type="datetime"], input[type="datetime-local"], 
-        input[type="date"], input[type="month"], input[type="time"], 
-        input[type="week"], input[type="number"], input[type="email"], 
-        input[type="url"], input[type="search"], input[type="tel"], 
-        input[type="color"] {
-            font-size: 16px;
-        }
+        gap: 2rem;
+        z-index: 999;
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { font-size: 1.4rem; }
+      .mobile-toggle { display: flex; }
+      .bc-span-4 { grid-column: span 12; }
+      .stats-strip { grid-template-columns: repeat(2,1fr); }
+      .stat-cell:nth-child(2) { border-right:none; }
+      .stat-cell:nth-child(3) { border-top:1px solid rgba(255,255,255,0.06); border-right:1px solid rgba(255,255,255,0.06); }
+      .stat-cell:nth-child(4) { border-top:1px solid rgba(255,255,255,0.06); border-right:none; }
+      .clients-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .form-box { padding: 1.75rem; }
+      .products-top { flex-direction: column; align-items: flex-start; }
+      .hero-badge-float { display: none; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .popup { right:12px; left:12px; max-width:none; }
+    }
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      select, textarea, input[type="text"], input[type="email"], input[type="tel"] { font-size:16px; }
     }
   </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="">
-                    <div class="com-logo hdr-midl">
-                        <img src="./images/logo1.png" alt="Aasai Tech Team" style="width: 75px; height: auto;">
-                    </div>
-                    <div class="hdr-midl">
-                        <a href="#home" class="logo">Aasai <span>Tech</span></a>
-                    </div>
-                </div>
-                <div class="mobile-toggle" id="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#ai-products">AI Products</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+<div class="popup" id="popup"></div>
+
+<!-- ═══ HEADER ═══ -->
+<header id="header">
+  <div class="container">
+    <nav>
+      <a href="#hero" class="logo">
+        <img src="./images/logo1.png" alt="Aasai Tech Logo">
+        <span class="logo-name">Aasai<em>Tech</em></span>
+      </a>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact" class="nav-btn">Talk to Us <i class="fas fa-arrow-right" style="font-size:0.72rem"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-wrap">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          AI-First Software Studio · Tamil Nadu, India
         </div>
-    </header>
-
-    <!-- Success Popup -->
-    <div class="popup" id="popup">Form submitted successfully!</div>
-
-    <!-- Hero Section -->
-    <section id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Powering Education with Artificial Intelligence</h1>
-                <p>Aasai Tech Providers Private Limited - A DPIIT-recognized startup and NVIDIA Inception member, specializing in AI-powered educational solutions, RAG systems, and cutting-edge technology services.</p>
-                <div class="hero-btns">
-                    <a href="#ai-products" class="btn">Explore AI Solutions</a>
-                    <a href="https://ai.aasaitech.in" class="btn btn-ai" target="_blank">Try Live Demo</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                <div class="certifications-badges">
-                    <div class="cert-badge dpiit-badge">
-                        <i class="fas fa-award" style="font-size: 50px; color: #ff6b35;"></i>
-                        <div class="cert-badge-text">
-                            <div class="cert-badge-title">Recognized by</div>
-                            <div class="cert-badge-org">DPIIT</div>
-                        </div>
-                    </div>
-                    <div class="cert-badge nvidia-badge">
-                        <i class="fas fa-microchip" style="font-size: 50px; color: var(--nvidia-green);"></i>
-                        <div class="cert-badge-text">
-                            <div class="cert-badge-title">Member of</div>
-                            <div class="cert-badge-org">NVIDIA Inception</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <h1 class="hero-h1">
+          Build <span class="w-light">smarter</span><br>
+          <span class="w-blue">AI products</span><br>
+          <span class="w-light">for the real</span> world.
+        </h1>
+        <p class="hero-sub">
+          We design and deploy production-grade AI systems — intelligent RAG platforms, conversational agents, and cloud-native applications — purpose-built for organizations that demand results.
+        </p>
+        <div class="trust-chips">
+          <span class="chip nvidia"><i class="fas fa-microchip"></i> NVIDIA Inception Member</span>
+          <span class="chip dpiit"><i class="fas fa-award"></i> DPIIT Recognized Startup</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <div class="about-img animate-fade-up">
-                    <img src="./images/aboutus.jpeg" alt="Aasai Tech Team">
-                </div>
-                <div class="about-text animate-fade-up">
-                    <h3>Leading AI Innovation in Education</h3>
-                    <p>Aasai Tech Providers Private Limited is an AI-focused technology company specializing in developing intelligent educational solutions. As a DPIIT-recognized startup and NVIDIA Inception Program member, we're at the forefront of transforming education through artificial intelligence.</p>
-                    <p>Our expertise lies in building advanced RAG (Retrieval-Augmented Generation) systems, AI chatbots, and intelligent learning platforms that make quality education accessible and personalized for every student.</p>
-                    <p>We combine cutting-edge AI research with practical applications to deliver solutions that truly make a difference in the educational landscape of India and beyond.</p>
-                    
-                    <div class="certifications-section">
-                        <div class="certifications-title">🏆 Our Recognition & Memberships</div>
-                        <div class="certifications-list">
-                            <div class="cert-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>DPIIT Recognized Startup</span>
-                            </div>
-                            <div class="cert-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>NVIDIA Inception Member</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#ai-products" class="btn" style="margin-top: 20px;">Explore Our AI Solutions</a>
-                </div>
-            </div>
+        <div class="hero-cta">
+          <a href="#products" class="btn btn-ink">Explore Products <i class="fas fa-arrow-right" style="font-size:0.8rem"></i></a>
+          <a href="#contact" class="btn btn-outline">Schedule a Demo</a>
         </div>
-    </section>
+      </div>
 
-    <!-- AI Products Section -->
-    <section id="ai-products">
-        <div class="container">
-            <div class="ai-products-header">
-                <div class="ai-badge">🤖 AI-Powered Solutions</div>
-                <h2 class="ai-title">Revolutionizing Education with AI</h2>
-                <p class="ai-subtitle">We specialize in building AI-powered RAG (Retrieval-Augmented Generation) systems designed for schools and colleges, enabling students to access personalized, intelligent learning support. Our goal is to transform education by integrating conversational AI, digital assistants, and smart learning platforms into the academic ecosystem.</p>
+      <div class="hero-right">
+        <div class="hero-badge-float">NVIDIA Inception<br><span>Verified Member</span></div>
+        <div class="dash-card">
+          <div class="dash-header">
+            <span class="dash-dot" style="background:#f87171"></span>
+            <span class="dash-dot" style="background:#fbbf24"></span>
+            <span class="dash-dot" style="background:#4ade80"></span>
+            <span class="dash-url">aasaitech.in — platform overview</span>
+          </div>
+          <div class="dash-body">
+            <div class="dash-sec-label">Live AI Products</div>
+            <div class="dp-row">
+              <div class="dp-icon" style="background:rgba(43,36,232,0.09);color:var(--blue)"><i class="fas fa-graduation-cap"></i></div>
+              <div class="dp-info"><div class="dp-name">Aasai School AI</div><div class="dp-sub">RAG · EdTech · Bilingual</div></div>
+              <span class="dp-live">Live</span>
             </div>
-
-            <div class="ai-products-grid">
-                <div class="ai-product-card">
-                    <div class="ai-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="ai-product-title">College RAG Systems</h3>
-                    <p class="ai-product-desc">Advanced AI systems providing instant access to syllabus Q&A, study materials, and contextual learning support for college students.</p>
-                    <ul class="ai-features">
-                        <li>Instant syllabus Q&A support</li>
-                        <li>Personalized study materials</li>
-                        <li>Contextual learning assistance</li>
-                        <li>Academic performance tracking</li>
-                        <li>24/7 AI tutoring support</li>
-                    </ul>
-                </div>
-
-                <div class="ai-product-card">
-                    <div class="ai-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <h3 class="ai-product-title">School Learning Companions</h3>
-                    <p class="ai-product-desc">Interactive, age-appropriate learning companions that explain concepts, assist with homework, and provide safe digital guidance for school students.</p>
-                    <ul class="ai-features">
-                        <li>Age-appropriate content delivery</li>
-                        <li>Interactive homework assistance</li>
-                        <li>Concept explanation with examples</li>
-                        <li>Safe digital learning environment</li>
-                        <li>Parental progress monitoring</li>
-                    </ul>
-                </div>
-
-                <div class="ai-product-card">
-                    <div class="ai-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="ai-product-title">Adaptive Learning AI</h3>
-                    <p class="ai-product-desc">Smart learning systems that adapt to individual student needs, learning pace, and preferences for optimized educational outcomes.</p>
-                    <ul class="ai-features">
-                        <li>Individual learning pace adaptation</li>
-                        <li>Learning style recognition</li>
-                        <li>Performance-based recommendations</li>
-                        <li>Knowledge gap identification</li>
-                        <li>Continuous learning optimization</li>
-                    </ul>
-                </div>
+            <div class="dp-row">
+              <div class="dp-icon" style="background:rgba(232,71,10,0.09);color:var(--orange)"><i class="fas fa-shopping-cart"></i></div>
+              <div class="dp-info"><div class="dp-name">E-Kart AI</div><div class="dp-sub">E-commerce · Semantic Search</div></div>
+              <span class="dp-live">Live</span>
             </div>
-
-            <div class="demo-section">
-                <div class="cta-content">
-                    <h3 class="demo-title">Experience Our AI Education Platform</h3>
-                    <p class="demo-text">Try our live RAG system demo and see how AI can transform the educational experience for students and institutions.</p>
-                    <div class="cta-buttons">
-                        <a href="https://ai.aasaitech.in" class="btn btn-ai" target="_blank">Try Live Demo</a>
-                        <a href="#contact" class="btn-secondary-internship">Get Custom Solution</a>
-                    </div>
-                </div>
+            <div class="dp-row">
+              <div class="dp-icon" style="background:rgba(26,122,74,0.09);color:var(--green)"><i class="fas fa-comments"></i></div>
+              <div class="dp-info"><div class="dp-name">FreeAI Chat</div><div class="dp-sub">Azure OpenAI · GPT · SaaS</div></div>
+              <span class="dp-live">Live</span>
             </div>
+            <div class="dp-row">
+              <div class="dp-icon" style="background:rgba(77,124,0,0.09);color:var(--nvidia)"><i class="fas fa-headset"></i></div>
+              <div class="dp-info"><div class="dp-name">Support Agent AI</div><div class="dp-sub">24/7 · Auto-escalation</div></div>
+              <span class="dp-live">Live</span>
+            </div>
+            <div class="dash-div"></div>
+            <div class="dash-stats">
+              <div class="ds-box"><div class="ds-val">4<span style="font-size:0.75rem;color:var(--ink3)">+</span></div><div class="ds-lbl">Products</div></div>
+              <div class="ds-box"><div class="ds-val">98<span style="font-size:0.65rem;color:var(--ink3)">%</span></div><div class="ds-lbl">RAG Accuracy</div></div>
+              <div class="ds-box"><div class="ds-val">10<span style="font-size:0.75rem;color:var(--ink3)">+</span></div><div class="ds-lbl">Clients</div></div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div></div>
+</section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <!-- AI Development Service Card -->
-                <div class="service-card animate-fade-up">
-                    <div class="service-img">
-                        <div class="service-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>AI Development</h3>
-                        <p>We specialize in developing custom AI solutions including RAG systems, chatbots, and intelligent automation. Our AI-powered solutions leverage the latest in machine learning and natural language processing to deliver exceptional results.</p>
-                        
-                        <div class="service-features">
-                            <h4>AI Solutions:</h4>
-                            <ul>
-                                <li>Custom RAG Systems</li>
-                                <li>AI Chatbots & Virtual Assistants</li>
-                                <li>Machine Learning Models</li>
-                                <li>Natural Language Processing</li>
-                                <li>Computer Vision Applications</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="service-btn">
-                            <a href="#contact" class="btn">Discuss AI Project</a>
-                        </div>
-                    </div>
-                </div>
+<!-- ═══ STATS ═══ -->
+<div id="stats">
+  <div class="stats-strip">
+    <div class="stat-cell reveal"><div class="stat-num">4<sup>+</sup></div><div class="stat-label">Production AI<br>products deployed</div></div>
+    <div class="stat-cell reveal"><div class="stat-num">2</div><div class="stat-label">Industry program<br>recognitions</div></div>
+    <div class="stat-cell reveal"><div class="stat-num">10<sup>+</sup></div><div class="stat-label">Client projects<br>successfully delivered</div></div>
+    <div class="stat-cell reveal"><div class="stat-num">3<sup>×</sup></div><div class="stat-label">Faster deployment<br>with our AI stack</div></div>
+  </div>
+</div>
 
-                <!-- App Development Service Card -->
-                <div class="service-card animate-fade-up">
-                    <div class="service-img">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>App Development</h3>
-                        <p>We deliver cutting-edge mobile applications for iOS and Android platforms that provide exceptional user experiences. Our apps integrate AI technologies to create smarter, more intuitive solutions.</p>
-                        
-                        <div class="service-btn">
-                            <a href="#contact" class="btn">Discuss Your App Project</a>
-                        </div>
-                    </div>
-                </div>
+<!-- ═══ PRODUCTS ═══ -->
+<section id="products">
+  <div class="container">
+    <div class="products-top reveal">
+      <div>
+        <div class="s-eyebrow">Our AI Products</div>
+        <h2 class="s-title">Intelligent platforms<br><span class="dim">built</span> <span class="blu">for scale.</span></h2>
+      </div>
+      <p class="s-desc" style="max-width:340px">Four production-ready AI systems, each purpose-built for a distinct industry — from education to e-commerce.</p>
+    </div>
 
-                <!-- Web Development Service Card -->
-                <div class="service-card animate-fade-up">
-                    <div class="service-img">
-                        <div class="service-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Web Development</h3>
-                        <p>Our web development services encompass everything from simple websites to complex web applications, e-commerce platforms, and custom business solutions with AI integration capabilities.</p>
-                        
-                        <div class="service-btn">
-                            <a href="#contact" class="btn">Start Your Web Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technology Trainings Service Card -->
-                <div class="service-card animate-fade-up">
-                    <div class="service-img">
-                        <div class="service-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Technology Trainings</h3>
-                        <p>We offer comprehensive technical training programs in AI, ML, and modern development technologies. Our industry-experienced trainers provide practical, hands-on learning experiences.</p>
-                        
-                        <div class="service-features">
-                            <h4>Training Programs:</h4>
-                            <ul>
-                                <li>Artificial Intelligence & Machine Learning</li>
-                                <li>Deep Learning & Neural Networks</li>
-                                <li>Full Stack Development (React, Node.js, Python)</li>
-                                <li>DevOps and Cloud Computing (AWS, GCP, Azure)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="service-btn">
-                            <a href="#contact" class="btn">Enroll in Training</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="bento">
+      <!-- Card 1 -->
+      <div class="bento-card bc-span-5 reveal">
+        <div class="bc-icon" style="background:rgba(43,36,232,0.07);color:var(--blue);border-color:rgba(43,36,232,0.15)"><i class="fas fa-graduation-cap"></i></div>
+        <span class="bc-tag">EdTech · RAG</span>
+        <div class="bc-name">Aasai School AI</div>
+        <p class="bc-desc">Comprehensive educational RAG platform for Tamil Nadu State Board (Grades 9–12). Bilingual Tamil/English Q&A, personalized study assistance, and role-based dashboards for students, teachers, and admins.</p>
+        <div class="bc-pills"><span class="bc-pill">Azure OpenAI</span><span class="bc-pill">MongoDB Vector</span><span class="bc-pill">Document AI</span><span class="bc-pill">Multi-tenant</span></div>
+        <a href="https://aasaischool.ai.aasaitech.in" target="_blank" class="bc-link">Launch Platform <i class="fas fa-arrow-right"></i></a>
+        <div class="bc-number">01</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bento-card bc-span-7 reveal">
+        <div class="bc-icon" style="background:rgba(232,71,10,0.07);color:var(--orange);border-color:rgba(232,71,10,0.15)"><i class="fas fa-shopping-cart"></i></div>
+        <span class="bc-tag" style="background:var(--orange-s);color:var(--orange);border-color:rgba(232,71,10,0.2)">E-Commerce · AI</span>
+        <div class="bc-name">E-Kart AI</div>
+        <p class="bc-desc">Intelligent e-commerce assistant with natural-language product search, personalized recommendations, and context-aware guidance — boosting conversions at every stage of the customer journey.</p>
+        <div class="bc-pills"><span class="bc-pill">Semantic Search</span><span class="bc-pill">Recommendations</span><span class="bc-pill">Gemini AI</span><span class="bc-pill">Real-time</span></div>
+        <a href="https://ekart.aasaitech.in" target="_blank" class="bc-link">View Demo <i class="fas fa-arrow-right"></i></a>
+        <div class="bc-number">02</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="bento-card bc-span-4 reveal">
+        <div class="bc-icon" style="background:var(--green-s);color:var(--green);border-color:rgba(26,122,74,0.2)"><i class="fas fa-comments"></i></div>
+        <span class="bc-tag" style="background:var(--green-s);color:var(--green);border-color:rgba(26,122,74,0.2)">Chat AI · SaaS</span>
+        <div class="bc-name">FreeAI Chat</div>
+        <p class="bc-desc">ChatGPT-style platform on Azure OpenAI with Google OAuth, SSE streaming, persistent conversation history, and enterprise security.</p>
+        <div class="bc-pills"><span class="bc-pill">Azure OpenAI GPT</span><span class="bc-pill">SSE Streaming</span><span class="bc-pill">AWS Lambda</span></div>
+        <a href="https://freeai.aasaitech.in" target="_blank" class="bc-link">Try Free <i class="fas fa-arrow-right"></i></a>
+        <div class="bc-number">03</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="bento-card bc-span-4 reveal">
+        <div class="bc-icon" style="background:rgba(77,124,0,0.08);color:var(--nvidia);border-color:rgba(77,124,0,0.2)"><i class="fas fa-headset"></i></div>
+        <span class="bc-tag" style="background:rgba(77,124,0,0.08);color:var(--nvidia);border-color:rgba(77,124,0,0.2)">Support · Automation</span>
+        <div class="bc-name">Support Agent AI</div>
+        <p class="bc-desc">24/7 intelligent customer support that resolves queries instantly, auto-routes complex tickets, and integrates with your existing helpdesk.</p>
+        <div class="bc-pills"><span class="bc-pill">RAG Knowledge Base</span><span class="bc-pill">Auto-escalation</span><span class="bc-pill">White-label</span></div>
+        <a href="https://supportagent.aasaitech.in" target="_blank" class="bc-link">Explore <i class="fas fa-arrow-right"></i></a>
+        <div class="bc-number">04</div>
+      </div>
+      <!-- Card 5: CTA -->
+      <div class="bento-card bc-span-4 reveal" style="background:var(--blue);border-color:var(--blue);display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.5);margin-bottom:1rem">Custom Build</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.3px;margin-bottom:0.75rem">Need a bespoke AI solution?</div>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.68);line-height:1.65">We design and build custom RAG systems, LLM integrations, and AI-powered apps from the ground up.</p>
         </div>
-    </section>
+        <a href="#contact" class="btn" style="background:#fff;color:var(--blue);margin-top:1.5rem;justify-content:center;font-weight:700">
+          Let's Talk <i class="fas fa-arrow-right" style="font-size:0.8rem"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Careers Section -->
-    <section id="careers">
-        <div class="container">
-            <h2>Career Opportunities</h2>
-            <div class="careers-container">
-                <div class="careers-text animate-fade-up">
-                    <h3>Join Our AI Innovation Team</h3>
-                    <p>At Aasai Tech, we're building the future of AI-powered education. Join our team of passionate innovators working on cutting-edge AI solutions that impact millions of students.</p>
-                    <p>As a DPIIT-recognized startup and NVIDIA Inception member, we offer exciting opportunities to work with the latest AI technologies and make a real difference in education.</p>
-                    <div class="career-benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-brain"></i>
-                            <div>
-                                <h4>Work on AI Innovation</h4>
-                                <p>Build cutting-edge AI solutions using latest technologies in ML, NLP, and RAG systems</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-rocket"></i>
-                            <div>
-                                <h4>Career Growth</h4>
-                                <p>Clear paths for advancement in a fast-growing AI startup with professional development opportunities</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Collaborative Culture</h4>
-                                <p>Work with talented AI engineers and researchers in a supportive environment</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="careers-form animate-fade-up">
-                    <h3>Apply Now</h3>
-                    <form id="career-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="position">Interested Position</label>
-                            <select id="position" name="position" required>
-                                <option value="">Select a position</option>
-                                <option value="AI/ML Engineer">AI/ML Engineer</option>
-                                <option value="RAG System Developer">RAG System Developer</option>
-                                <option value="NLP Engineer">NLP Engineer</option>
-                                <option value="Full Stack Developer">Full Stack Developer</option>
-                                <option value="App Developer">App Developer</option>
-                                <option value="UI/UX Designer">UI/UX Designer</option>
-                                <option value="Technical Trainer">Technical Trainer</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Cover Letter</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit Application</button>
-                    </form>
-                </div>
-            </div>
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="container">
+    <div class="services-layout">
+      <div class="services-sticky reveal">
+        <div class="s-eyebrow">Services</div>
+        <h2 class="s-title">What we<br><span class="blu">build</span><br><span class="dim">for you.</span></h2>
+        <p class="s-desc" style="margin-top:1.25rem">End-to-end technology services from AI development to mobile apps and cloud infrastructure.</p>
+        <a href="#contact" class="btn btn-ink" style="margin-top:2rem">Start a Project <i class="fas fa-arrow-right" style="font-size:0.8rem"></i></a>
+      </div>
+      <div>
+        <div class="service-row reveal">
+          <span class="sr-num">01</span>
+          <div><div class="sr-icon"><i class="fas fa-brain"></i></div><div class="sr-name">AI &amp; LLM Development</div><p class="sr-desc">Custom RAG pipelines, LLM fine-tuning, intelligent chatbots, NLP systems, and ML models tailored to your data and domain.</p></div>
+          <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info animate-fade-up">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@aasaitech.in</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 8939134777</p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Devapandalam, Tamil Nadu, India</p>
-                        </div>
-                    </div>
-                    <h3 style="margin-top: 40px;">Connect With Us</h3>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/share/16oqTSW37R/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/aasai-tech-providers-aa4abb367" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/aasai_tech_providers" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@aasai_tech_providers" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form animate-fade-up">
-                    <h3>Send Us a Message</h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="contact-name">Name</label>
-                            <input type="text" id="contact-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-email">Email</label>
-                            <input type="email" id="contact-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-message">Message</label>
-                            <textarea id="contact-message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
+        <div class="service-row reveal">
+          <span class="sr-num">02</span>
+          <div><div class="sr-icon"><i class="fas fa-mobile-alt"></i></div><div class="sr-name">Mobile App Development</div><p class="sr-desc">iOS and Android applications with AI integrations — GPT assistants, on-device ML, and real-time data sync built for performance.</p></div>
+          <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Aasai Tech</h3>
-                    <p>A DPIIT-recognized startup and NVIDIA Inception member, powering the future of education through cutting-edge AI technology and innovative solutions.</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/share/16oqTSW37R/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/aasai-tech-providers-aa4abb367" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/aasai_tech_providers" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@aasai_tech_providers" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#ai-products">AI Products</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>AI Solutions</h3>
-                    <ul>
-                        <li><a href="#ai-products">College RAG Systems</a></li>
-                        <li><a href="#ai-products">School Learning Companions</a></li>
-                        <li><a href="#ai-products">Adaptive Learning AI</a></li>
-                        <li><a href="#services">Custom AI Development</a></li>
-                        <li><a href="#services">AI Training Programs</a></li>
-                        <li><a href="https://ai.aasaitech.in" target="_blank">Live AI Demo</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@aasaitech.in</li>
-                        <li><i class="fas fa-phone"></i> +91 8939134777</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Devapandalam, Tamil Nadu, India</li>
-                        <li><a href="https://ai.aasaitech.in" target="_blank"><i class="fas fa-robot"></i> Try AI Demo</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Aasai Tech Providers Private Limited. All Rights Reserved. | DPIIT Recognized | NVIDIA Inception Member</p>
-            </div>
+        <div class="service-row reveal">
+          <span class="sr-num">03</span>
+          <div><div class="sr-icon"><i class="fas fa-laptop-code"></i></div><div class="sr-name">Web Development</div><p class="sr-desc">Modern SaaS platforms, enterprise portals, and e-commerce solutions built with React, Node.js, and cloud-native architecture.</p></div>
+          <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
         </div>
-    </footer>
+        <div class="service-row reveal">
+          <span class="sr-num">04</span>
+          <div><div class="sr-icon"><i class="fas fa-cloud"></i></div><div class="sr-name">Cloud &amp; DevOps</div><p class="sr-desc">AWS, Azure, and GCP deployments, Cloudflare edge infrastructure, CI/CD pipelines, and scalable serverless architectures.</p></div>
+          <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
+        </div>
+        <div class="service-row reveal">
+          <span class="sr-num">05</span>
+          <div><div class="sr-icon"><i class="fas fa-cogs"></i></div><div class="sr-name">System Integration</div><p class="sr-desc">Connecting AI capabilities to existing CRMs, ERPs, APIs, and business workflows — seamlessly and reliably at scale.</p></div>
+          <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
+        </div>
+        <div class="service-row reveal">
+          <span class="sr-num">06</span>
+          <div><div class="sr-icon"><i class="fas fa-chalkboard-teacher"></i></div><div class="sr-name">Technical Training</div><p class="sr-desc">Hands-on corporate programs in AI/ML, full-stack development, and cloud technologies for teams at every level.</p></div>
+          <span class="sr-arrow"><i class="fas fa-arrow-up-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-       // Configuration
-const API_BASE_URL = 'https://aasai-tech-api.onrender.com/aasaitech/email';
+<!-- ═══ CLIENTS ═══ -->
+<section id="clients">
+  <div class="container">
+    <div class="reveal">
+      <div class="s-eyebrow">Client Work</div>
+      <h2 class="s-title">Trusted by organizations<br><span class="dim">that demand</span> <span class="blu">excellence.</span></h2>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card reveal">
+        <div class="client-thumb" style="background:linear-gradient(135deg,#f5f0ff,#ede9fe);color:#7c3aed"><i class="fas fa-heart"></i></div>
+        <div class="client-body">
+          <div class="client-cat">Life Coaching · Wellness</div>
+          <h3 class="client-name">HappySoul Coaching</h3>
+          <p class="client-desc">Professional coaching platform with an integrated appointment booking system, client management portal, and structured content delivery — built to scale a coaching practice digitally.</p>
+          <a href="https://happysoul.info/" target="_blank" class="client-link">Visit Website <i class="fas fa-external-link-alt" style="font-size:0.75rem"></i></a>
+        </div>
+      </div>
+      <div class="client-card reveal">
+        <div class="client-thumb" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);color:#d97706"><i class="fas fa-flask"></i></div>
+        <div class="client-body">
+          <div class="client-cat">Holistic Wellness · Personal Development</div>
+          <h3 class="client-name">The Alchemy of Living</h3>
+          <p class="client-desc">Transformative wellness platform offering holistic life coaching, curated workshop management, and a content hub for personal development resources — a premium experience at every touchpoint.</p>
+          <a href="https://thealchemyofyourliving.in/" target="_blank" class="client-link">Visit Website <i class="fas fa-external-link-alt" style="font-size:0.75rem"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-// Utility functions
-function showLoadingState(button, originalText = 'Submit') {
-    button.disabled = true;
-    const loadingHTML = `
-        <span style="display: inline-flex; align-items: center; gap: 8px;">
-            <svg style="animation: spin 1s linear infinite; width: 16px; height: 16px;" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.3"/>
-                <path fill="currentColor" d="M4 12a8 8 0 0 1 8-8v4a4 4 0 0 0-4 4H4z"/>
-            </svg>
-            Sending...
-        </span>
-    `;
-    button.innerHTML = loadingHTML;
-}
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="s-eyebrow">Contact</div>
+      <h2 class="s-title">Let's build your<br><span class="blu">AI advantage.</span></h2>
+      <p class="s-desc" style="margin-top:0.75rem">Have a project in mind or want a product demo? We'll get back to you within 24 hours.</p>
+    </div>
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="ci-row"><div class="ci-icon-box"><i class="fas fa-envelope"></i></div><div class="ci-data"><h5>Email</h5><p>info@aasaitech.in</p></div></div>
+        <div class="ci-row"><div class="ci-icon-box"><i class="fas fa-phone"></i></div><div class="ci-data"><h5>Phone</h5><p>+91 89391 34777</p></div></div>
+        <div class="ci-row"><div class="ci-icon-box"><i class="fas fa-map-marker-alt"></i></div><div class="ci-data"><h5>Location</h5><p>Devapandalam, Tamil Nadu, India</p></div></div>
+        <div class="ci-row"><div class="ci-icon-box"><i class="fas fa-clock"></i></div><div class="ci-data"><h5>Response Time</h5><p>Within 24 hours on business days</p></div></div>
+        <div class="social-line">
+          <a href="https://www.facebook.com/share/16oqTSW37R/" target="_blank" class="soc"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/in/aasai-tech-providers-aa4abb367" target="_blank" class="soc"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/aasai_tech_providers" target="_blank" class="soc"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@aasai_tech_providers" target="_blank" class="soc"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="form-box">
+          <div class="form-title">Send us a message</div>
+          <form id="contact-form">
+            <div class="two-col">
+              <div class="fg"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+              <div class="fg"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@company.com" required></div>
+            </div>
+            <div class="fg">
+              <label for="interest">I'm interested in</label>
+              <select id="interest" name="interest">
+                <option value="">Select a service or product…</option>
+                <option value="school-ai">Aasai School AI</option>
+                <option value="freeai">FreeAI Chat Platform</option>
+                <option value="ekart">E-Kart AI</option>
+                <option value="support-agent">Support Agent AI</option>
+                <option value="custom-ai">Custom AI Development</option>
+                <option value="web-mobile">Web / Mobile Development</option>
+                <option value="cloud">Cloud &amp; DevOps</option>
+                <option value="training">Technical Training</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="fg"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="Brief subject line" required></div>
+            <div class="fg"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us about your project or requirements…" required></textarea></div>
+            <button type="submit" class="btn btn-ink" style="width:100%;justify-content:center">Send Message <i class="fas fa-paper-plane" style="font-size:0.8rem"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-function resetButtonState(button, originalText) {
-    button.disabled = false;
-    button.innerHTML = originalText;
-}
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <img src="./images/logo1.png" alt="Aasai Tech Logo" style="border-color:rgba(255,255,255,0.1)">
+          <span class="logo-name">Aasai<em>Tech</em></span>
+        </a>
+        <p>DPIIT-recognized startup and NVIDIA Inception member building production-grade AI from Tamil Nadu for the world.</p>
+      </div>
+      <div class="footer-col">
+        <h5>AI Products</h5>
+        <ul>
+          <li><a href="https://aasaischool.ai.aasaitech.in" target="_blank">Aasai School AI</a></li>
+          <li><a href="https://ekart.aasaitech.in" target="_blank">E-Kart AI</a></li>
+          <li><a href="https://freeai.aasaitech.in" target="_blank">FreeAI Chat</a></li>
+          <li><a href="https://supportagent.aasaitech.in" target="_blank">Support Agent AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">AI Development</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Cloud &amp; DevOps</a></li>
+          <li><a href="#services">Technical Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#clients">Client Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:info@aasaitech.in">info@aasaitech.in</a></li>
+          <li><a href="tel:+918939134777">+91 89391 34777</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Aasai Tech Providers Private Limited. All Rights Reserved.</p>
+      <div class="fbadges">
+        <span class="fbadge nv">NVIDIA Inception</span>
+        <span class="fbadge dp">DPIIT Recognized</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-function showPopup(message, isSuccess = true) {
-    const popup = document.getElementById('popup');
-    if (popup) {
-        popup.textContent = message;
-        popup.className = `popup ${isSuccess ? 'success' : 'error'}`;
-        popup.classList.add('show');
-        
-        setTimeout(() => {
-            popup.classList.remove('show');
-        }, 5000);
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      e.target.style.transitionDelay = (i * 55) + 'ms';
+      e.target.classList.add('in');
     }
-}
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function validatePhone(phone) {
-    const phoneRegex = /^[+]?[\d\s\-\(\)]{10,}$/;
-    return phoneRegex.test(phone);
-}
-
-// API Functions
-async function submitCareerForm(formData) {
-    try {
-        const response = await fetch(`${API_BASE_URL}/api/career`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-        
-        const result = await response.json();
-        if (!response.ok) {
-            throw new Error(result.message || `Server error: ${response.status}`);
-        }
-        
-        return result;
-    } catch (error) {
-        console.error('Career form submission error:', error);
-        throw error;
-    }
-}
-
-async function submitContactForm(formData) {
-    try {
-        const response = await fetch(`${API_BASE_URL}/api/contact`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-        
-        const result = await response.json();
-        if (!response.ok) {
-            throw new Error(result.message || `Server error: ${response.status}`);
-        }
-        
-        return result;
-    } catch (error) {
-        console.error('Contact form submission error:', error);
-        throw error;
-    }
-}
-
-// DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const nav = document.getElementById('nav');
-    
-    // Mobile Navigation Toggle
-    if (mobileToggle && nav) {
-        mobileToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            if (mobileToggle.querySelector('i')) {
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
-            }
-        });
-    }
-
-    // Close mobile menu when clicking a link
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            if (mobileToggle.querySelector('i')) {
-                mobileToggle.querySelector('i').classList.add('fa-bars');
-                mobileToggle.querySelector('i').classList.remove('fa-times');
-            }
-        });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = nav.contains(event.target);
-        const isClickOnToggle = mobileToggle.contains(event.target);
-        
-        if (nav.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
-            nav.classList.remove('active');
-            if (mobileToggle.querySelector('i')) {
-                mobileToggle.querySelector('i').classList.add('fa-bars');
-                mobileToggle.querySelector('i').classList.remove('fa-times');
-            }
-        }
-    });
-
-    // Career Form Submission
-    const careerForm = document.getElementById('career-form');
-    const popup = document.getElementById('popup');
-
-    if (careerForm && popup) {
-        careerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = careerForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            try {
-                const formData = new FormData(careerForm);
-                const data = {
-                    name: formData.get('name')?.trim(),
-                    email: formData.get('email')?.trim(),
-                    phone: formData.get('phone')?.trim(),
-                    position: formData.get('position'),
-                    message: formData.get('message')?.trim()
-                };
-                
-                // Client-side validation
-                const errors = [];
-                
-                if (!data.name || data.name.length < 2) {
-                    errors.push('Name must be at least 2 characters long');
-                }
-                
-                if (!data.email || !validateEmail(data.email)) {
-                    errors.push('Please enter a valid email address');
-                }
-                
-                if (!data.phone || !validatePhone(data.phone)) {
-                    errors.push('Please enter a valid phone number');
-                }
-                
-                if (!data.position || data.position === '') {
-                    errors.push('Please select a position');
-                }
-                
-                if (!data.message || data.message.length < 10) {
-                    errors.push('Cover letter must be at least 10 characters long');
-                }
-                
-                if (errors.length > 0) {
-                    showPopup(`Please fix the following issues: ${errors.join(', ')}`, false);
-                    return;
-                }
-                
-                showLoadingState(submitBtn, originalText);
-                
-                const result = await submitCareerForm(data);
-                
-                showPopup('Thank you for your application! We will review it and get back to you soon.', true);
-                careerForm.reset();
-                
-            } catch (error) {
-                console.error('Career form error:', error);
-                let errorMessage = 'Sorry, there was an error submitting your application. Please try again or contact us directly.';
-                
-                if (error.message.includes('Failed to fetch')) {
-                    errorMessage = 'Unable to connect to server. Please check your internet connection and try again.';
-                } else if (error.message.includes('Server error')) {
-                    errorMessage = 'Server is temporarily unavailable. Please try again in a few minutes.';
-                }
-                
-                showPopup(errorMessage, false);
-            } finally {
-                resetButtonState(submitBtn, originalText);
-            }
-        });
-    }
-
-    // Contact Form Submission
-    const contactForm = document.getElementById('contact-form');
-
-    if (contactForm && popup) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            try {
-                const formData = new FormData(contactForm);
-                const data = {
-                    name: formData.get('name')?.trim(),
-                    email: formData.get('email')?.trim(),
-                    subject: formData.get('subject')?.trim(),
-                    message: formData.get('message')?.trim()
-                };
-                
-                // Client-side validation
-                const errors = [];
-                
-                if (!data.name || data.name.length < 2) {
-                    errors.push('Name must be at least 2 characters long');
-                }
-                
-                if (!data.email || !validateEmail(data.email)) {
-                    errors.push('Please enter a valid email address');
-                }
-                
-                if (!data.subject || data.subject.length < 3) {
-                    errors.push('Subject must be at least 3 characters long');
-                }
-                
-                if (!data.message || data.message.length < 10) {
-                    errors.push('Message must be at least 10 characters long');
-                }
-                
-                if (errors.length > 0) {
-                    showPopup(`Please fix the following issues: ${errors.join(', ')}`, false);
-                    return;
-                }
-                
-                showLoadingState(submitBtn, originalText);
-                
-                const result = await submitContactForm(data);
-                
-                showPopup('Thank you for your message! We will get back to you soon.', true);
-                contactForm.reset();
-                
-            } catch (error) {
-                console.error('Contact form error:', error);
-                let errorMessage = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
-                
-                if (error.message.includes('Failed to fetch')) {
-                    errorMessage = 'Unable to connect to server. Please check your internet connection and try again.';
-                } else if (error.message.includes('Server error')) {
-                    errorMessage = 'Server is temporarily unavailable. Please try again in a few minutes.';
-                }
-                
-                showPopup(errorMessage, false);
-            } finally {
-                resetButtonState(submitBtn, originalText);
-            }
-        });
-    }
-
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Header scroll effect
-    function handleHeaderScroll() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.style.padding = '2px 0';
-            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-        } else {
-            header.style.padding = '5px 0';
-            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        }
-    }
-    
-    window.addEventListener('scroll', handleHeaderScroll);
-    handleHeaderScroll();
-
-    // Animations on scroll using Intersection Observer
-    if ('IntersectionObserver' in window) {
-        const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        animateElements.forEach(element => {
-            observer.observe(element);
-        });
-    } else {
-        const animateElements = document.querySelectorAll('.animate-fade-up, .animate-fade-in');
-        animateElements.forEach(element => {
-            element.classList.add('animate-active');
-        });
-    }
+// Header
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
 });
-    </script>
+
+// Mobile nav
+const tog = document.getElementById('mobile-toggle');
+const nav = document.getElementById('nav-links');
+tog.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  const ic = tog.querySelector('i');
+  ic.classList.toggle('fa-bars');
+  ic.classList.toggle('fa-times');
+});
+nav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('active');
+    const ic = tog.querySelector('i');
+    ic.classList.add('fa-bars');
+    ic.classList.remove('fa-times');
+  });
+});
+document.addEventListener('click', e => {
+  if (!nav.contains(e.target) && !tog.contains(e.target) && nav.classList.contains('active')) {
+    nav.classList.remove('active');
+    const ic = tog.querySelector('i');
+    ic.classList.add('fa-bars');
+    ic.classList.remove('fa-times');
+  }
+});
+
+// Popup
+function showPopup(msg, ok = true) {
+  const p = document.getElementById('popup');
+  p.textContent = msg;
+  p.className = `popup ${ok ? 'success' : 'error'} show`;
+  setTimeout(() => p.classList.remove('show'), 5000);
+}
+
+// Form
+const API_BASE = 'https://aasai-tech-api.onrender.com/aasaitech/email';
+document.getElementById('contact-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('button[type="submit"]');
+  const orig = btn.innerHTML;
+  const fd   = new FormData(form);
+  const data = {
+    name:    fd.get('name')?.trim(),
+    email:   fd.get('email')?.trim(),
+    subject: fd.get('subject')?.trim(),
+    message: fd.get('message')?.trim()
+  };
+  if (!data.name   || data.name.length < 2)   return showPopup('Please enter your full name.', false);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return showPopup('Please enter a valid email.', false);
+  if (!data.subject || data.subject.length < 3) return showPopup('Please enter a subject.', false);
+  if (!data.message || data.message.length < 10) return showPopup('Message too short.', false);
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+  try {
+    const res = await fetch(`${API_BASE}/api/contact`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error((await res.json()).message || 'Server error');
+    showPopup("Message sent! We'll get back to you within 24 hours.", true);
+    form.reset();
+  } catch (err) {
+    showPopup(err.message.includes('fetch') ? 'Connection issue. Email us at info@aasaitech.in' : 'Failed to send. Please try again.', false);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = orig;
+  }
+});
+</script>
 </body>
 </html>
