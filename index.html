@@ -271,6 +271,12 @@
       border: 1.5px solid var(--border2);
     }
     .btn-outline:hover { border-color: var(--ink); background: var(--surface); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-secondary:hover { border-color: var(--primary); background: rgba(0,229,255,0.08); }
 
     /* Hero dashboard */
     .hero-right { position: relative; animation: heroIn 0.7s 0.2s ease both; }
@@ -1818,6 +1824,7 @@ function showPopup(msg, ok = true) {
 
 // Form
 const API_BASE = 'https://aasai-tech-api.onrender.com/aasaitech/email';
+
 document.getElementById('contact-form').addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
@@ -1830,24 +1837,75 @@ document.getElementById('contact-form').addEventListener('submit', async e => {
     subject: fd.get('subject')?.trim(),
     message: fd.get('message')?.trim()
   };
-  if (!data.name   || data.name.length < 2)   return showPopup('Please enter your full name.', false);
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return showPopup('Please enter a valid email.', false);
-  if (!data.subject || data.subject.length < 3) return showPopup('Please enter a subject.', false);
-  if (!data.message || data.message.length < 10) return showPopup('Message too short.', false);
+
+  // Validation
+  if (!data.name || data.name.length < 2)
+    return showPopup('Please enter your full name.', false);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
+    return showPopup('Please enter a valid email address.', false);
+  if (!data.subject || data.subject.length < 3)
+    return showPopup('Please enter a subject.', false);
+  if (!data.message || data.message.length < 10)
+    return showPopup('Your message is too short.', false);
+
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+
+  // After 2.5s show "waking up server" hint
+  const wakeTimer = setTimeout(() => {
+    if (btn.disabled) btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting…';
+  }, 2500);
+
+  // 25-second timeout controller
+  const controller = new AbortController();
+  const timeoutId  = setTimeout(() => controller.abort(), 25000);
+
   try {
     const res = await fetch(`${API_BASE}/api/contact`, {
-      method: 'POST',
+      method:  'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(data)
+      body:    JSON.stringify(data),
+      signal:  controller.signal
     });
-    if (!res.ok) throw new Error((await res.json()).message || 'Server error');
-    await res.json();
-    showPopup("Message sent! We'll get back to you within 24 hours.", true);
+    clearTimeout(timeoutId);
+    clearTimeout(wakeTimer);
+
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => ({}));
+      throw new Error(errBody.message || `Server error (${res.status})`);
+    }
+
+    await res.json().catch(() => null); // safe read
+    showPopup("✅ Message sent! We'll get back to you within 24 hours.", true);
     form.reset();
+
   } catch (err) {
-    showPopup(err.message.includes('fetch') ? 'Connection issue. Please email info@aasaitech.in directly.' : 'Failed to send. Please email info@aasaitech.in.', false);
+    clearTimeout(timeoutId);
+    clearTimeout(wakeTimer);
+
+    // Build a mailto fallback so the user can always reach us
+    const mailtoLink = `mailto:info@aasaitech.in?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\n\n' + data.message)}`;
+
+    if (err.name === 'AbortError') {
+      showPopup('⏱ Server took too long — click the button below to email us directly.', false);
+    } else {
+      showPopup('⚠️ Could not send — click the button below to email us directly.', false);
+    }
+
+    // Show a mailto fallback button inside the form temporarily
+    const existing = document.getElementById('mailto-fallback');
+    if (!existing) {
+      const fallbackBtn = document.createElement('a');
+      fallbackBtn.id = 'mailto-fallback';
+      fallbackBtn.href = mailtoLink;
+      fallbackBtn.className = 'btn btn-secondary';
+      fallbackBtn.style.cssText = 'width:100%;justify-content:center;margin-top:10px;display:inline-flex;text-decoration:none;';
+      fallbackBtn.innerHTML = '<i class="fas fa-envelope"></i> Open in Email App';
+      btn.parentNode.insertBefore(fallbackBtn, btn.nextSibling);
+      // Auto-remove after 30s
+      setTimeout(() => fallbackBtn.remove(), 30000);
+    }
+
   } finally {
     btn.disabled = false;
     btn.innerHTML = orig;
